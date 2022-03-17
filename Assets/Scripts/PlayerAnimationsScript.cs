@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// ›“Œ“  À¿—— Õ≈ Õ”∆≈Õ!
+// ≈√Œ «¿Ã≈Õﬂ≈“ PLAYER!
 public class PlayerAnimationsScript : MonoBehaviour
 {
     private bool fight;
@@ -14,7 +17,7 @@ public class PlayerAnimationsScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        /*SpriteRenderer sr = GetComponent<SpriteRenderer>();
         Animator a = GetComponent<Animator>();
         if (Input.GetKeyDown(KeyCode.E))
             a.Play("Player_hit");
@@ -27,6 +30,6 @@ public class PlayerAnimationsScript : MonoBehaviour
                 sr.flipX = false;
         }
         else
-            a.Play("Player_static");
+            a.Play("Player_static");*/
     }
 }
