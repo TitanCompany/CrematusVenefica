@@ -17,7 +17,7 @@ public class PlayerAnimationsScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        /*SpriteRenderer spriteRender = GetComponent<SpriteRenderer>();
         Animator a = GetComponent<Animator>();
         if (Input.GetKeyDown(KeyCode.E))
             a.Play("Player_hit");
@@ -25,9 +25,9 @@ public class PlayerAnimationsScript : MonoBehaviour
         {
             a.Play("Player_run");
             if (Input.GetAxis("Horizontal") < 0)
-                sr.flipX = true;
+                spriteRender.flipX = true;
             if (Input.GetAxis("Horizontal") > 0)
-                sr.flipX = false;
+                spriteRender.flipX = false;
         }
         else
             a.Play("Player_static");*/

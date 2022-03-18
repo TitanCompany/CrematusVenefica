@@ -23,18 +23,20 @@ public class EnemyCat : Enemy
 			CurrentHP -= damage;
 
 			if (CurrentHP <= 0)
-			{
 				Die();
-				IsDie = true;
-			}
 		}
 	}
 
 	public override void Die()
 	{
+		IsDie = true;
 		Debug.Log("Enemy is Dead");
 		// TODO: Die Animation 
+		// animator.SetBool("IsDead", true);
 		transform.Rotate(0f, 0f, 45f);
 		// TODO: Enemy is disable
+		GetComponent<Collider2D>().enabled = false;
+		transform.position = new Vector3(transform.position.x, transform.position.y, 1f);
+		this.enabled = false;
 	}
 }

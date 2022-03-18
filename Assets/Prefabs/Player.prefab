@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2126339943599488229}
   - component: {fileID: 2126339943599488231}
   - component: {fileID: 2126339943599488228}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -113,7 +113,9 @@ GameObject:
   - component: {fileID: 2126339943984895271}
   - component: {fileID: 2126339943984895269}
   - component: {fileID: 2126339943984895268}
-  m_Layer: 0
+  - component: {fileID: 8142937681920493076}
+  - component: {fileID: 3468468346965363785}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -199,8 +201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 12
-  HP: 100
-  Atack: 2
 --- !u!50 &2126339943984895267
 Rigidbody2D:
   serializedVersion: 4
@@ -286,3 +286,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8142937681920493076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126339943984895266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59e2dd554f4d7f41a28e6dbb3eff55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3468468346965363785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126339943984895266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa97923e90ecf242a8368e267ac5e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2126339943984895268}
+  attackPoint: {fileID: 0}
+  attackDistance: 0.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 128
