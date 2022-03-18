@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
 		if (Input.GetAxis("Horizontal") < 0)
 		{
@@ -22,5 +22,10 @@ public class Player : MonoBehaviour
 		}
     }
 
-    
+    private IEnumerator WaitAnim(float time)
+	{
+        Animator animator = GetComponent<Animator>();
+        animator.Ta
+        yield return new WaitForSeconds(time);
+	}
 }

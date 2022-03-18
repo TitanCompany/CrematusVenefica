@@ -19,13 +19,13 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
 	{
-        // TODO: Play Animation
+        // Play Animation
         animator.SetTrigger("Attack");
 
-        // TODO: Search Enemy
+        // Search Enemy
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackDistance, enemyLayers);
 
-		// TODO: Damage to Enemy
+		// Damage to Enemy
 		foreach (var enemy in hitEnemies)
 		{
             Debug.Log("Attack succsess to " + enemy.name);

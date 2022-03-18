@@ -1,25 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyCat : Enemy
 {
 	public override int MaxHP { get; set; }
-	public override int currentHP { get; set; }
+	public override int CurrentHP { get; set; }
+	public override bool IsDie { get; set; }
+
+	Transform transform;
 
 	void Start()
-    {
+	{
+		transform = GetComponent<Transform>();
 		MaxHP = 100;
-        currentHP = MaxHP;
-    }
+		CurrentHP = MaxHP;
+		IsDie = false;
+	}
 
 	public override void TakeDamage(int damage)
 	{
-		currentHP -= damage;
-
-		if (currentHP <= 0)
+		if (!IsDie)
 		{
-			Die();
+			CurrentHP -= damage;
+
+			if (CurrentHP <= 0)
+			{
+				Die();
+				IsDie = true;
+			}
 		}
 	}
 
@@ -27,6 +34,7 @@ public class EnemyCat : Enemy
 	{
 		Debug.Log("Enemy is Dead");
 		// TODO: Die Animation 
+		transform.Rotate(0f, 0f, 45f);
 		// TODO: Enemy is disable
 	}
 }
