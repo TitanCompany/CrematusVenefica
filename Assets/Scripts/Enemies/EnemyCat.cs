@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyCat : Enemy
 {
@@ -6,14 +7,33 @@ public class EnemyCat : Enemy
 	public override int CurrentHP { get; set; }
 	public override bool IsDie { get; set; }
 
-	Transform transform;
+	Transform trform;
+	NavMeshAgent agent;
+
+	public Transform searchPoint;
+	public float searchDistance = 25f;
+	public LayerMask layerPlayer;
+
 
 	void Start()
 	{
-		transform = GetComponent<Transform>();
+		trform = GetComponent<Transform>();
+		agent = GetComponent<NavMeshAgent>();
 		MaxHP = 100;
 		CurrentHP = MaxHP;
 		IsDie = false;
+
+	}
+
+	void Update()
+	{
+		GoToPlayer();
+	}
+
+	private void GoToPlayer()
+	{
+		Collider2D player = Physics2D.OverlapCircle(searchPoint.position, searchDistance, layerPlayer);
+		//agent.SetDestination(player.ClosestPoint);
 	}
 
 	public override void TakeDamage(int damage)
@@ -33,10 +53,18 @@ public class EnemyCat : Enemy
 		Debug.Log("Enemy is Dead");
 		// TODO: Die Animation 
 		// animator.SetBool("IsDead", true);
-		transform.Rotate(0f, 0f, 45f);
+		trform.Rotate(0f, 0f, 45f);
 		// TODO: Enemy is disable
 		GetComponent<Collider2D>().enabled = false;
-		transform.position = new Vector3(transform.position.x, transform.position.y, 1f);
+		trform.position = new Vector3(trform.position.x, trform.position.y, 1f);
 		this.enabled = false;
+	}
+
+	private void OnDrawGizmosSelected()
+	{
+		if (searchPoint == null)
+			return;
+
+		Gizmos.DrawWireSphere(searchPoint.position, searchDistance);
 	}
 }

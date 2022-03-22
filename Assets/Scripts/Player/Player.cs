@@ -24,50 +24,10 @@ public class Player : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		float currentDirection;
-		float hAxis = Input.GetAxis("Horizontal");
-		if (hAxis > 0)
-			currentDirection = 1f;
-		else if (hAxis == 0)
-			currentDirection = 0f;
-		else
-			currentDirection = -1f;
-		print(currentDirection);
-
-		if (currentDirection != _previousDirection && hAxis != 0)
-		{
-			_previousDirection = currentDirection;
-			if (currentDirection < 0)
-			{
-				animator.SetTrigger("Run");
-				ChangeDirection(true);
-			}
-			else if (currentDirection > 0)
-			{
-				animator.SetTrigger("Run");
-				ChangeDirection(false);
-			}
-			else
-			{
-
-			}
-		}
+		
 	}
 
-	// Смена направления.
-	private void ChangeDirection(bool right)
-	{
-		if (right)
-		{
-			spriteRender.flipX = true;
-			transformAttackPoint.position = new Vector3(plTransform.position.x + -0.55f, plTransform.position.y + 0.01f, 0);
-		}
-		else
-		{
-			spriteRender.flipX = false;
-			transformAttackPoint.position = new Vector3(plTransform.position.x + 0.55f, plTransform.position.y + 0.01f, 0);
-		}
-	}
+	
 
 	private IEnumerator WaitAnim(float time)
 	{
