@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-	public float MovementSpeed;
+	public float movementSpeed;
 	private float vAxis;
 	private float hAxis;
 
@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
 	private Animator animator;
 	private PlayerCombat playerCombat;
 	private SpriteRenderer spriteRender;
+	Vector2 movement;
 
 	private Transform plTransform;
 	private Transform transformAttackPoint;
@@ -30,7 +31,7 @@ public class PlayerMove : MonoBehaviour
 	{
 		hAxis = Input.GetAxis("Horizontal");
 		vAxis = Input.GetAxis("Vertical");
-		var move = new Vector2(MovementSpeed * hAxis, MovementSpeed * vAxis);
+		var move = new Vector2(movementSpeed * hAxis, movementSpeed * vAxis);
 		rbody.velocity = move;
 	}
 
