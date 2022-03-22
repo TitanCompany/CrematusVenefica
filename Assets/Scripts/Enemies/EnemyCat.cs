@@ -1,5 +1,5 @@
+using Pathfinding;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyCat : Enemy
 {
@@ -8,32 +8,30 @@ public class EnemyCat : Enemy
 	public override bool IsDie { get; set; }
 
 	Transform trform;
-	NavMeshAgent agent;
 
 	public Transform searchPoint;
 	public float searchDistance = 25f;
 	public LayerMask layerPlayer;
 
+	AIDestinationSetter ai;
+	Transform playerTr;
+	Player player;
+
 
 	void Start()
 	{
 		trform = GetComponent<Transform>();
-		agent = GetComponent<NavMeshAgent>();
+		ai = GetComponent<AIDestinationSetter>();
+		player = GetComponent<Player>();
 		MaxHP = 100;
 		CurrentHP = MaxHP;
 		IsDie = false;
-
 	}
 
 	void Update()
 	{
-		GoToPlayer();
-	}
-
-	private void GoToPlayer()
-	{
-		Collider2D player = Physics2D.OverlapCircle(searchPoint.position, searchDistance, layerPlayer);
-		//agent.SetDestination(player.ClosestPoint);
+		//ai.target = player.transform; 
+		//SearchPathToPlayer();
 	}
 
 	public override void TakeDamage(int damage)

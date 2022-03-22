@@ -49,7 +49,7 @@ public class PlayerMove : MonoBehaviour
 				ChangeDirection(true);
 			}
 		}
-		else
+		else if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Attack"))
 			animator.Play("Player_static");
 	}
 
