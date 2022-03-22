@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyCat : Enemy
 {
@@ -8,7 +7,6 @@ public class EnemyCat : Enemy
 	public override bool IsDie { get; set; }
 
 	Transform trform;
-	NavMeshAgent agent;
 
 	public Transform searchPoint;
 	public float searchDistance = 25f;
@@ -18,22 +16,14 @@ public class EnemyCat : Enemy
 	void Start()
 	{
 		trform = GetComponent<Transform>();
-		agent = GetComponent<NavMeshAgent>();
 		MaxHP = 100;
 		CurrentHP = MaxHP;
 		IsDie = false;
-
 	}
 
 	void Update()
 	{
-		GoToPlayer();
-	}
-
-	private void GoToPlayer()
-	{
-		Collider2D player = Physics2D.OverlapCircle(searchPoint.position, searchDistance, layerPlayer);
-		//agent.SetDestination(player.ClosestPoint);
+		//SearchPathToPlayer();
 	}
 
 	public override void TakeDamage(int damage)

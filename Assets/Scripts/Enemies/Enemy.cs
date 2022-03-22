@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
 
 public abstract class Enemy : MonoBehaviour
 {
-	private NavMeshAgent agent;
+	//private NavMeshAgent agent;
 
 	public abstract int MaxHP { get; set; }
 	public abstract int CurrentHP { get; set; }
