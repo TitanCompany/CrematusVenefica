@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     public Camera cam;
-    public Rigidbody2D rb;
 
     public Transform firePoint;
-    public GameObject bullet;
+    public GameObject bulletPrefab;
 
     public float bulletForce = 20f;
 
@@ -18,6 +17,17 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+    }
+
+    private void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(firePoint.up*bulletForce, ForceMode2D.Impulse);
     }
 
     private void FixedUpdate()
