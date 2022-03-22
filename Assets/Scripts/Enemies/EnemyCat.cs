@@ -1,3 +1,4 @@
+using Pathfinding;
 using UnityEngine;
 
 public class EnemyCat : Enemy
@@ -12,10 +13,16 @@ public class EnemyCat : Enemy
 	public float searchDistance = 25f;
 	public LayerMask layerPlayer;
 
+	AIDestinationSetter ai;
+	Transform playerTr;
+	Player player;
+
 
 	void Start()
 	{
 		trform = GetComponent<Transform>();
+		ai = GetComponent<AIDestinationSetter>();
+		player = GetComponent<Player>();
 		MaxHP = 100;
 		CurrentHP = MaxHP;
 		IsDie = false;
@@ -23,6 +30,7 @@ public class EnemyCat : Enemy
 
 	void Update()
 	{
+		ai.target = player.transform; 
 		//SearchPathToPlayer();
 	}
 
