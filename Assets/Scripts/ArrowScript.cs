@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class ArrowScript : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        gameObject.transform.Rotate(0f, 0f, 90f);
         if(collision.collider != GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>())
         {
             if(collision.transform.tag == "Mob")
@@ -14,7 +15,7 @@ public class BulletScript : MonoBehaviour
                 enemy.TakeDamage(20);
                 Destroy(gameObject);
             }
-            Destroy(gameObject, 2f);
         }
+        Destroy(gameObject, 2f);
     }
 }

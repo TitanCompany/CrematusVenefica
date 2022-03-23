@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   searchPoint: {fileID: 247391277087915740}
-  searchDistance: 25
+  searchDistance: 10
   layerPlayer:
     serializedVersion: 2
     m_Bits: 128

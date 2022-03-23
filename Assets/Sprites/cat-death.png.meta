@@ -1,49 +1,67 @@
 fileFormatVersion: 2
-guid: 1b5670b40e909ae49834ace1bc806b4f
+guid: 0c4d442af4eea4446926e0be6015e0d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8868413094627966455
-    second: grass2
+      213: 6700577241658780174
+    second: cat-death_0
   - first:
-      213: -1830037950486454266
-    second: forest_13
+      213: -3633454314210299904
+    second: cat-death_1
   - first:
-      213: 2696522741156339179
-    second: grass3
+      213: 1057176163472245967
+    second: cat-death_2
   - first:
-      213: -7891683879516172507
-    second: grass4
+      213: -6841344451015641715
+    second: cat-death_3
   - first:
-      213: 5683820010810302669
-    second: grass5
+      213: 7088795933462586857
+    second: cat-death_4
   - first:
-      213: -2023444736949204580
-    second: grass6
+      213: 5274876626173305795
+    second: cat-death_5
   - first:
-      213: -2658766987431653123
-    second: grass7
+      213: 2507694062927173791
+    second: cat-death_6
   - first:
-      213: -8634539011413370990
-    second: grass8
+      213: 1529560708075400882
+    second: cat-death_7
   - first:
-      213: 7062624075520463540
-    second: grass9
+      213: -7949145722006524973
+    second: cat-death_8
   - first:
-      213: -731641956432434480
-    second: grass10
+      213: 4912265032880344288
+    second: cat-death_9
   - first:
-      213: -3187593200219576100
-    second: fenceCenter
+      213: -421907565429056285
+    second: cat-death_10
   - first:
-      213: 8795293302428683203
-    second: fenceDown
+      213: 1041993384206267527
+    second: cat-death_11
   - first:
-      213: 1991546205849280067
-    second: fenceLeft
+      213: -5153532028604880229
+    second: cat-death_12
   - first:
-      213: 5435084055269978488
-    second: fenceUp
+      213: -8886543440398248897
+    second: cat-death_13
+  - first:
+      213: -5173590702991906606
+    second: cat-death_14
+  - first:
+      213: -4713236800754475488
+    second: cat-death_15
+  - first:
+      213: -4114318166453387932
+    second: cat-death_16
+  - first:
+      213: -6124220555643253359
+    second: cat-death_17
+  - first:
+      213: 4012723342006668116
+    second: cat-death_18
+  - first:
+      213: -1347485553821931410
+    second: cat-death_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -133,370 +151,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tree1
+      name: cat-death_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 187
-        width: 54
-        height: 69
+        x: 2
+        y: 0
+        width: 17
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42b59fddaecda5de0800000000000000
-      internalID: -1343518637512107228
+      spriteID: e0a6327008b3dfc50800000000000000
+      internalID: 6700577241658780174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tree2
+      name: cat-death_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00072e55d80639dc0800000000000000
+      internalID: -3633454314210299904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc406c89e18dbae00800000000000000
+      internalID: 1057176163472245967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_3
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d857f130879ae01a0800000000000000
+      internalID: -6841344451015641715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_4
       rect:
         serializedVersion: 2
         x: 82
-        y: 192
-        width: 36
-        height: 49
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0cdd5b2f8f0028c0800000000000000
-      internalID: -4026200959286911990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree3
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 192
-        width: 45
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 443edb1cc52f15c50800000000000000
-      internalID: 6652364604804293444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree4
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 167
-        width: 57
-        height: 89
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2832cdaa91b77f50800000000000000
-      internalID: 6879162233729988653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bones1
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 164
-        width: 21
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8900a3cebe4322c0800000000000000
-      internalID: -4457632624933860982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bones2
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 163
-        width: 21
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2689f3acb426b0d10800000000000000
-      internalID: 2092874529498962018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bones3
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 165
+        y: 0
         width: 14
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d780cf5386b91e60800000000000000
-      internalID: 7933572893953263569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rock1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 160
-        width: 16
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4c41c95e1c85d800800000000000000
-      internalID: 636568984325540939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rock3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 128
-        width: 31
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdf26f2e5183c1620800000000000000
-      internalID: 2746131539442413531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bones4
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 148
-        width: 13
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd9d86bc332444ff0800000000000000
-      internalID: -52844505398191651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rock2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 32
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80f09aef747cadfe0800000000000000
-      internalID: -1163398441692754168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grass
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 504bdf48b1fbdec20800000000000000
-      internalID: 3237453832065496069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grass2
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 902074df6411de480800000000000000
-      internalID: -8868413094627966455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_13
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 96
-        width: 64
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60065c31e266a96e0800000000000000
-      internalID: -1830037950486454266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grass3
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bedd2637529fb6520800000000000000
-      internalID: 2696522741156339179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grass4
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52f03c1d25b1b7290800000000000000
-      internalID: -7891683879516172507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grass5
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc0ea978f2cf0ee40800000000000000
-      internalID: 5683820010810302669
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fenceCenter
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 64
-        width: 16
-        height: 16
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -504,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd8267c7fd463c3d0800000000000000
-      internalID: -3187593200219576100
+      spriteID: 9e5654be756706260800000000000000
+      internalID: 7088795933462586857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fenceDown
+      name: cat-death_5
       rect:
         serializedVersion: 2
-        x: 176
-        y: 60
-        width: 16
-        height: 4
+        x: 102
+        y: 0
+        width: 15
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,20 +270,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cb42aab8a82f0a70800000000000000
-      internalID: 8795293302428683203
+      spriteID: 3c322111850243940800000000000000
+      internalID: 5274876626173305795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fenceLeft
+      name: cat-death_6
       rect:
         serializedVersion: 2
-        x: 172
-        y: 64
-        width: 4
-        height: 16
+        x: 122
+        y: 0
+        width: 15
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -546,20 +291,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34e5c69f8b463ab10800000000000000
-      internalID: 1991546205849280067
+      spriteID: f985122c67e1dc220800000000000000
+      internalID: 2507694062927173791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fenceUp
+      name: cat-death_7
       rect:
         serializedVersion: 2
-        x: 128
-        y: 80
-        width: 16
-        height: 4
+        x: 142
+        y: 0
+        width: 15
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -567,8 +312,260 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 871b1c6e62c4d6b40800000000000000
-      internalID: 5435084055269978488
+      spriteID: 2beaa3b2c571a3510800000000000000
+      internalID: 1529560708075400882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_8
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db2cfb0516fea190800000000000000
+      internalID: -7949145722006524973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_9
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ecc767650fdb2440800000000000000
+      internalID: 4912265032880344288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_10
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 0
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec1d8afd45152af0800000000000000
+      internalID: -421907565429056285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_11
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784fbe35677e57e00800000000000000
+      internalID: 1041993384206267527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_12
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 0
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a6860bce9fa78b0800000000000000
+      internalID: -5153532028604880229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_13
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f341cf9e2d7aca480800000000000000
+      internalID: -8886543440398248897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_14
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d867ee9aa6b338b0800000000000000
+      internalID: -5173590702991906606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_15
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 0
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e1bbcf918379eb0800000000000000
+      internalID: -4713236800754475488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_16
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46dfb9b1d6107e6c0800000000000000
+      internalID: -4114318166453387932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_17
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 0
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d0db62ad5620ba0800000000000000
+      internalID: -6124220555643253359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_18
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 0
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45bc9368e9e00b730800000000000000
+      internalID: 4012723342006668116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-death_19
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 0
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6829703705cc4de0800000000000000
+      internalID: -1347485553821931410
       vertices: []
       indices: 
       edges: []

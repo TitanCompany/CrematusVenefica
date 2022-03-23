@@ -48,10 +48,9 @@ public class EnemyCat : Enemy
 		// TODO: Die Animation 
 		// animator.SetBool("IsDead", true);
 		trform.Rotate(0f, 0f, 45f);
-		// TODO: Enemy is disable
 		GetComponent<Collider2D>().enabled = false;
 		trform.position = new Vector3(trform.position.x, trform.position.y, 1f);
-		this.enabled = false;
+		Destroy(gameObject, 6f);
 	}
 
 	private void OnDrawGizmosSelected()
