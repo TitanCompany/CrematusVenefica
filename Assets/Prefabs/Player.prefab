@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111997336590564814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.253, y: 0.007, z: 0}
+  m_LocalPosition: {x: 0.02, y: 0.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2126339943984895270}
@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 8142937681920493076}
   - component: {fileID: 3468468346965363785}
   - component: {fileID: 381343829}
+  - component: {fileID: 1189949715}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -379,3 +380,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 12
+--- !u!114 &1189949715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126339943984895266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0c391b6e98d244e956ab75b5d91034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 2126339943599488229}
+  firePoint: {fileID: 5437729020764933756}
+  bulletPrefab: {fileID: 1443914055138823874, guid: 3d4d2c1cd64b47443b9f954d61c60bf2, type: 3}
+  bulletForce: 20

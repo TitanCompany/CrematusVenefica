@@ -10,28 +10,24 @@ public class EnemyCat : Enemy
 	Transform trform;
 
 	public Transform searchPoint;
-	public float searchDistance = 25f;
+	public float searchDistance = 10f;
 	public LayerMask layerPlayer;
 
 	AIDestinationSetter ai;
-	Transform playerTr;
-	Player player;
-
 
 	void Start()
 	{
 		trform = GetComponent<Transform>();
 		ai = GetComponent<AIDestinationSetter>();
-		player = GetComponent<Player>();
 		MaxHP = 100;
 		CurrentHP = MaxHP;
 		IsDie = false;
+		layerPlayer = LayerMask.GetMask("Player");
 	}
 
 	void Update()
 	{
-		//ai.target = player.transform; 
-		//SearchPathToPlayer();
+		SearchPathToPlayer(ai, searchPoint, searchDistance);
 	}
 
 	public override void TakeDamage(int damage)
@@ -64,5 +60,16 @@ public class EnemyCat : Enemy
 			return;
 
 		Gizmos.DrawWireSphere(searchPoint.position, searchDistance);
+	}
+
+	public void SearchPathToPlayer()
+	{
+		Collider2D player = Physics2D.OverlapCircle(searchPoint.position, searchDistance, layerPlayer);
+		if (player != null && ai.target == null)
+		{
+			ai.target = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+		}
+		else if (player == null)
+			ai.target = null;
 	}
 }
