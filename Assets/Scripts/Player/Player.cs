@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
 	Transform plTransform;
 	Transform transformAttackPoint;
 
-	// Определяет направление (>1 - право, <1 - лево).
 	float _previousDirection;
 
 	void Start()

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7612738318943247597}
   - component: {fileID: 1434435672868691121}
   - component: {fileID: 8870094373712656965}
+  - component: {fileID: 1039393056}
   m_Layer: 6
   m_Name: Cat
   m_TagString: Mob
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 6196752201076204823, guid: 6843432453867e84cb1bd52e29e56a3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -234,7 +235,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 2126339943984895270, guid: 664b4b5053293ba4cbb948a25cc8b4e7, type: 3}
+  target: {fileID: 0}
+--- !u!50 &1039393056
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687569242143983223}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &6968465968450837689
 GameObject:
   m_ObjectHideFlags: 0
