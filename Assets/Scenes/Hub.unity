@@ -3328,7 +3328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5687569242143983223, guid: 8ccf02e358f77224bb075baf510f0af8, type: 3}
       propertyPath: m_Name
-      value: Cat
+      value: CatDivergent
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ccf02e358f77224bb075baf510f0af8, type: 3}

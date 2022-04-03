@@ -6,28 +6,48 @@ public class EnemyCat : Enemy
 	public override int MaxHP { get; set; }
 	public override int CurrentHP { get; set; }
 	public override bool IsDie { get; set; }
+	public override float Damage { get; set; }
 
-	Transform trform;
+	Transform catTransform;
 
+	public LayerMask layerPlayer;
 	public Transform searchPoint;
 	public float searchDistance = 10f;
-	public LayerMask layerPlayer;
+
+	public Transform attackPoint;
+	public float attackDistance;
 
 	AIDestinationSetter ai;
 
+	// Определение частоты атаки.
+	public float attackRate = 2f;
+	float nextAttackTime = 0f;
+
+
 	void Start()
 	{
-		trform = GetComponent<Transform>();
+		catTransform = GetComponent<Transform>();
 		ai = GetComponent<AIDestinationSetter>();
 		MaxHP = 100;
 		CurrentHP = MaxHP;
 		IsDie = false;
+
+		attackDistance = 4;
+		Damage = 3;
+
 		layerPlayer = LayerMask.GetMask("Player");
 	}
 
 	void Update()
 	{
 		SearchPathToPlayer(ai, searchPoint, searchDistance);
+
+		Collider2D player = Physics2D.OverlapCircle(attackPoint.position, attackDistance, layerPlayer);
+		if (player != null && Time.time >= nextAttackTime)
+		{
+			Attack(player);
+			nextAttackTime = Time.time + 3f / attackRate;
+		}
 	}
 
 	public override void TakeDamage(int damage)
@@ -47,28 +67,25 @@ public class EnemyCat : Enemy
 		Debug.Log("Enemy is Dead");
 		// TODO: Die Animation 
 		// animator.SetBool("IsDead", true);
-		trform.Rotate(0f, 0f, 45f);
+		catTransform.Rotate(0f, 0f, 45f);
 		GetComponent<Collider2D>().enabled = false;
-		trform.position = new Vector3(trform.position.x, trform.position.y, 1f);
+		catTransform.position = new Vector3(catTransform.position.x, catTransform.position.y, 1f);
 		Destroy(gameObject, 6f);
 	}
 
 	private void OnDrawGizmosSelected()
 	{
-		if (searchPoint == null)
-			return;
+		if (searchPoint != null)
+			Gizmos.DrawWireSphere(searchPoint.position, searchDistance);
 
-		Gizmos.DrawWireSphere(searchPoint.position, searchDistance);
+		if (attackPoint != null)
+			Gizmos.DrawWireSphere(attackPoint.position, attackDistance);
+
 	}
 
-	public void SearchPathToPlayer()
+	public override void Attack(Collider2D player)
 	{
-		Collider2D player = Physics2D.OverlapCircle(searchPoint.position, searchDistance, layerPlayer);
-		if (player != null && ai.target == null)
-		{
-			ai.target = GameObject.FindGameObjectsWithTag("Player")[0].transform;
-		}
-		else if (player == null)
-			ai.target = null;
+		print("Cat Attack!");
+		player.GetComponent<Player>().GetDamage(Damage);
 	}
 }
