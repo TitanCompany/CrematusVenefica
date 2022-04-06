@@ -181,14 +181,11 @@ MonoBehaviour:
   layerPlayer:
     serializedVersion: 2
     m_Bits: 128
-<<<<<<< HEAD
   animator: {fileID: 5687569242143983222}
-=======
   searchPoint: {fileID: 247391277087915740}
   searchDistance: 15
   attackPoint: {fileID: 6269179012642106967}
   attackDistance: 4
->>>>>>> 61e3b187b13a027caa1d82c0c464bf867e048c8d
 --- !u!114 &7612738318943247597
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class EnemyCat : Enemy
 	public override int MaxHP { get; set; }
 	public override int CurrentHP { get; set; }
 	public override bool IsDie { get; set; }
-    public override float Damage { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+	public override float Damage { get; set; }
 
     Transform trform;
 
@@ -18,7 +18,15 @@ public class EnemyCat : Enemy
 	private float vAxis;
 	private float hAxis;
 
+	public Transform attackPoint;
+	public float attackDistance;
+
 	AIDestinationSetter ai;
+
+	// Определение частоты атаки.
+	public float attackRate = 2f;
+	float nextAttackTime = 0f;
+
 
 	void Start()
 	{
@@ -28,26 +36,22 @@ public class EnemyCat : Enemy
 		MaxHP = 100;
 		CurrentHP = MaxHP;
 		IsDie = false;
+
+		attackDistance = 4;
+		Damage = 3;
+
 		layerPlayer = LayerMask.GetMask("Player");
 	}
 
 	void Update()
 	{
 		SearchPathToPlayer(ai, searchPoint, searchDistance);
-		vAxis = 0;
-		float isMove = Mathf.Abs(vAxis) + Mathf.Abs(hAxis);
-		animator.SetFloat("catSpeed", isMove);
 
-		if (hAxis != 0 || vAxis != 0)
+		Collider2D player = Physics2D.OverlapCircle(attackPoint.position, attackDistance, layerPlayer);
+		if (player != null && Time.time >= nextAttackTime)
 		{
-			if (hAxis > 0)
-			{
-				ChangeDirection(false);
-			}
-			else if (hAxis < 0)
-			{
-				ChangeDirection(true);
-			}
+			Attack(player);
+			nextAttackTime = Time.time + 3f / attackRate;
 		}
 	}
 
@@ -72,21 +76,18 @@ public class EnemyCat : Enemy
 
 	private void OnDrawGizmosSelected()
 	{
-		if (searchPoint == null)
-			return;
+		if (searchPoint != null)
+			Gizmos.DrawWireSphere(searchPoint.position, searchDistance);
 
-		Gizmos.DrawWireSphere(searchPoint.position, searchDistance);
+		if (attackPoint != null)
+			Gizmos.DrawWireSphere(attackPoint.position, attackDistance);
+
 	}
 
-	public void SearchPathToPlayer()
+	public override void Attack(Collider2D player)
 	{
-		Collider2D player = Physics2D.OverlapCircle(searchPoint.position, searchDistance, layerPlayer);
-		if (player != null && ai.target == null)
-		{
-			ai.target = GameObject.FindGameObjectsWithTag("Player")[0].transform;
-		}
-		else if (player == null)
-			ai.target = null;
+		print("Cat Attack!");
+		player.GetComponent<Player>().GetDamage(Damage);
 	}
 
 	private void ChangeDirection(bool right)
@@ -100,9 +101,4 @@ public class EnemyCat : Enemy
 			spriteRender.flipX = false;
 		}
 	}
-
-    public override void Attack(Collider2D player)
-    {
-        throw new System.NotImplementedException();
-    }
 }
