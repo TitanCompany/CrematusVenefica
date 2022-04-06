@@ -6,6 +6,7 @@ public class PlayerShoot : MonoBehaviour
 {
     public Camera cam;
     public Rigidbody2D rbody;
+    public SpriteRenderer player;
 
     public Transform firePoint;
     public GameObject arrowPrefab;
@@ -35,6 +36,7 @@ public class PlayerShoot : MonoBehaviour
     {
         firePoint.Rotate(0f, 0f, angle);
         GameObject bullet = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
+
         Rigidbody2D rbody = bullet.GetComponent<Rigidbody2D>();
         rbody.AddForce(firePoint.up*arrowForce, ForceMode2D.Impulse);
         firePoint.Rotate(0f, 0f, -angle);

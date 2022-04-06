@@ -152,6 +152,7 @@ MonoBehaviour:
   layerPlayer:
     serializedVersion: 2
     m_Bits: 128
+  animator: {fileID: 5687569242143983222}
 --- !u!114 &7612738318943247597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,3 +306,4 @@ MonoBehaviour:
   layerPlayer:
     serializedVersion: 2
     m_Bits: 128
+  animator: {fileID: 0}

@@ -12,6 +12,10 @@ public class EnemyCat : Enemy
 	public Transform searchPoint;
 	public float searchDistance = 10f;
 	public LayerMask layerPlayer;
+	public Animator animator;
+	private SpriteRenderer spriteRender;
+	private float vAxis;
+	private float hAxis;
 
 	AIDestinationSetter ai;
 
@@ -19,6 +23,7 @@ public class EnemyCat : Enemy
 	{
 		trform = GetComponent<Transform>();
 		ai = GetComponent<AIDestinationSetter>();
+		spriteRender = GetComponent<SpriteRenderer>();
 		MaxHP = 100;
 		CurrentHP = MaxHP;
 		IsDie = false;
@@ -28,9 +33,25 @@ public class EnemyCat : Enemy
 	void Update()
 	{
 		SearchPathToPlayer(ai, searchPoint, searchDistance);
+		hAxis = Input.GetAxis("Horizontal");
+		vAxis = Input.GetAxis("Vertical");
+		float isMove = Mathf.Abs(vAxis) + Mathf.Abs(hAxis);
+		animator.SetFloat("catSpeed", isMove);
+
+		if (hAxis != 0 || vAxis != 0)
+		{
+			if (hAxis > 0)
+			{
+				ChangeDirection(false);
+			}
+			else if (hAxis < 0)
+			{
+				ChangeDirection(true);
+			}
+		}
 	}
 
-	public override void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
 	{
 		if (!IsDie)
 		{
@@ -44,13 +65,9 @@ public class EnemyCat : Enemy
 	public override void Die()
 	{
 		IsDie = true;
-		Debug.Log("Enemy is Dead");
-		// TODO: Die Animation 
-		// animator.SetBool("IsDead", true);
-		trform.Rotate(0f, 0f, 45f);
+		animator.SetBool("isDead", true);
 		GetComponent<Collider2D>().enabled = false;
-		trform.position = new Vector3(trform.position.x, trform.position.y, 1f);
-		Destroy(gameObject, 6f);
+		Destroy(gameObject, 1.55f);
 	}
 
 	private void OnDrawGizmosSelected()
@@ -70,5 +87,17 @@ public class EnemyCat : Enemy
 		}
 		else if (player == null)
 			ai.target = null;
+	}
+
+	private void ChangeDirection(bool right)
+	{
+		if (right)
+		{
+			spriteRender.flipX = true;
+		}
+		else
+		{
+			spriteRender.flipX = false;
+		}
 	}
 }

@@ -10,6 +10,7 @@ public class PlayerCombat : MonoBehaviour
 	// Определение частоты атаки.
 	public float attackRate = 2f;
 	float nextAttackTime = 0f;
+	float attackDisable = 0f;
 
 	void Update()
 	{
@@ -17,16 +18,19 @@ public class PlayerCombat : MonoBehaviour
 		if (Time.time >= nextAttackTime)
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
-				nextAttackTime = Time.time + 1f / attackRate;
+				nextAttackTime = Time.time + 3f / attackRate;
+				animator.SetBool("isAttack", true);
 				Attack();
 			}
+		if(Time.time >= attackDisable)
+        {
+			animator.SetBool("isAttack", false);
+			attackDisable = Time.time + 1.5f;
+        }
 	}
 
 	void Attack()
 	{
-		// Play Animation
-		animator.SetTrigger("Attack");
-
 		// Search Enemy
 		Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackDistance, enemyLayers);
 

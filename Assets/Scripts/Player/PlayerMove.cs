@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
 	private float hAxis;
 
 	private Rigidbody2D rbody;
-	private Animator animator;
+	public Animator animator;
 	private PlayerCombat playerCombat;
 	private SpriteRenderer spriteRender;
 	Vector2 movement;
@@ -22,7 +22,6 @@ public class PlayerMove : MonoBehaviour
 		rbody = GetComponent<Rigidbody2D>();
 		spriteRender = GetComponent<SpriteRenderer>();
 		playerCombat = GetComponent<PlayerCombat>();
-		animator = GetComponent<Animator>();
 		plTransform = GetComponent<Transform>();
 		transformAttackPoint = playerCombat.attackPoint.transform;
 	}
@@ -37,9 +36,11 @@ public class PlayerMove : MonoBehaviour
 
 	void Update()
 	{
+		float isMove = Mathf.Abs(vAxis)+Mathf.Abs(hAxis);
+		animator.SetFloat("playerSpeed", isMove);
+
 		if (hAxis != 0 || vAxis != 0)
 		{
-			animator.Play("Player_run");
 			if (hAxis > 0)
 			{
 				ChangeDirection(false);
@@ -49,8 +50,6 @@ public class PlayerMove : MonoBehaviour
 				ChangeDirection(true);
 			}
 		}
-		else if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Attack"))
-			animator.Play("Player_static");
 	}
 
 	// Смена направления.

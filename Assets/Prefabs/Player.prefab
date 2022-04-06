@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 12
+  animator: {fileID: 2126339943984895268}
 --- !u!114 &1189949715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,4 +397,4 @@ MonoBehaviour:
   rbody: {fileID: 2126339943984895267}
   firePoint: {fileID: 5437729020764933756}
   arrowPrefab: {fileID: 5141435632130598940, guid: 5584a66c4fc56a24dbad1adbe8bce957, type: 3}
-  arrowForce: 50
+  arrowForce: 60
