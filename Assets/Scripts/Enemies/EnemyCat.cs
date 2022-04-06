@@ -6,8 +6,9 @@ public class EnemyCat : Enemy
 	public override int MaxHP { get; set; }
 	public override int CurrentHP { get; set; }
 	public override bool IsDie { get; set; }
+    public override float Damage { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
-	Transform trform;
+    Transform trform;
 
 	public Transform searchPoint;
 	public float searchDistance = 10f;
@@ -33,8 +34,7 @@ public class EnemyCat : Enemy
 	void Update()
 	{
 		SearchPathToPlayer(ai, searchPoint, searchDistance);
-		hAxis = Input.GetAxis("Horizontal");
-		vAxis = Input.GetAxis("Vertical");
+		vAxis = 0;
 		float isMove = Mathf.Abs(vAxis) + Mathf.Abs(hAxis);
 		animator.SetFloat("catSpeed", isMove);
 
@@ -100,4 +100,9 @@ public class EnemyCat : Enemy
 			spriteRender.flipX = false;
 		}
 	}
+
+    public override void Attack(Collider2D player)
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Mob
   - FirePoint
+  - UIElements
+  - HPBar
+  - YouDead
   layers:
   - Default
   - TransparentFX

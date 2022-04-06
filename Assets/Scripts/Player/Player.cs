@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -7,18 +8,19 @@ public class Player : MonoBehaviour
 	Animator animator;
 	PlayerCombat playerCombat;
 
-	Transform plTransform;
-	Transform transformAttackPoint;
+	
 
-	float _previousDirection;
+	public float MaxHealthPoints;
+	public float currentHealthPoints;
 
 	void Start()
 	{
 		spriteRender = GetComponent<SpriteRenderer>();
 		playerCombat = GetComponent<PlayerCombat>();
 		animator = GetComponent<Animator>();
-		plTransform = GetComponent<Transform>();
-		transformAttackPoint = playerCombat.attackPoint.transform;
+
+		MaxHealthPoints = 100;
+		currentHealthPoints = MaxHealthPoints;
 	}
 
 	void FixedUpdate()
@@ -26,10 +28,21 @@ public class Player : MonoBehaviour
 		
 	}
 
-	
-
-	private IEnumerator WaitAnim(float time)
+	public void GetDamage(float damage)
 	{
-		yield return new WaitForSeconds(time);
+		currentHealthPoints -= damage;
+		print(currentHealthPoints);
+
+		Text HPBar = GameObject.FindGameObjectWithTag("HPBar").GetComponent<Text>();
+		HPBar.text = $"HP {currentHealthPoints}/100";
+
+		if (currentHealthPoints <= 0)
+			Die();
+	}
+
+	public void Die()
+	{
+		// YouDeadText = "YOU DEAD";
+		print("YOU DEAD");
 	}
 }
