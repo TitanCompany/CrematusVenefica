@@ -42,7 +42,8 @@ public class Player : MonoBehaviour
 
 	public void Die()
 	{
-		// YouDeadText = "YOU DEAD";
+		animator.SetBool("isDead", true);
+		Destroy(gameObject, 0.9f);
 		print("YOU DEAD");
 	}
 }

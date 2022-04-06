@@ -178,14 +178,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c169f643ec63844bc0c6a9b5ba951a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 2
+  searchPoint: {fileID: 247391277087915740}
+  searchDistance: 15
   layerPlayer:
     serializedVersion: 2
     m_Bits: 128
   animator: {fileID: 5687569242143983222}
-  searchPoint: {fileID: 247391277087915740}
-  searchDistance: 15
   attackPoint: {fileID: 6269179012642106967}
   attackDistance: 4
+  attackRate: 30
 --- !u!114 &7612738318943247597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 247391277087915740}
+  - component: {fileID: 2297049779163997442}
   m_Layer: 6
   m_Name: SearchPoint
   m_TagString: Untagged
@@ -321,7 +324,6 @@ Transform:
   m_Father: {fileID: 5687569242143983216}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!114 &2297049779163997442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,11 +336,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c169f643ec63844bc0c6a9b5ba951a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 0
   searchPoint: {fileID: 247391277087915740}
   searchDistance: 25
   layerPlayer:
     serializedVersion: 2
     m_Bits: 128
   animator: {fileID: 0}
-=======
->>>>>>> 61e3b187b13a027caa1d82c0c464bf867e048c8d
+  attackPoint: {fileID: 0}
+  attackDistance: 0
+  attackRate: 2

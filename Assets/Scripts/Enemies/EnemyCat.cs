@@ -6,7 +6,6 @@ public class EnemyCat : Enemy
 	public override int MaxHP { get; set; }
 	public override int CurrentHP { get; set; }
 	public override bool IsDie { get; set; }
-	public override float Damage { get; set; }
 
     Transform trform;
 
@@ -38,7 +37,6 @@ public class EnemyCat : Enemy
 		IsDie = false;
 
 		attackDistance = 4;
-		Damage = 3;
 
 		layerPlayer = LayerMask.GetMask("Player");
 	}

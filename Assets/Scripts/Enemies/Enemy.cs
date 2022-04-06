@@ -6,7 +6,7 @@ public abstract class Enemy : MonoBehaviour
 	public abstract int MaxHP { get; set; }
 	public abstract int CurrentHP { get; set; }
 	public abstract bool IsDie { get; set; }
-	public abstract float Damage { get; set;}
+	public float Damage;
 
 	public abstract void TakeDamage(int damage);
 	public abstract void Attack(Collider2D player);
