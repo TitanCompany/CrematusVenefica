@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     private Camera c1;
+    public GameObject player;
     public float min = 4f;
     public float max = 16f;
     void Start()
@@ -15,6 +16,7 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
         var mousePlus = Input.GetAxis("Mouse ScrollWheel");
+        c1.transform.position = new Vector3(player.transform.position.x,player.transform.position.y, -11);
         if(mousePlus == 0)
             return;
         if(mousePlus > 0 && c1.orthographicSize<=max)

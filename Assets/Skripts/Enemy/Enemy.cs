@@ -1,3 +1,4 @@
+
 using Pathfinding;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public abstract class Enemy : MonoBehaviour
 
 
 	private void Update()
-	{}
+	{ }
 
 	private void Start()
 	{

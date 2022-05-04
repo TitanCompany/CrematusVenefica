@@ -95,9 +95,9 @@ public class CatController : Enemy
 	}
 	#endregion
 
-	public override void TakeDamage(int damage) 
+	public override void TakeDamage(int damage)
 	{
-		
+
 	}
 	public override void Attack(Collider2D player) { }
 	public override void Die() { }
