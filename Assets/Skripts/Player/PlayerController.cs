@@ -1,35 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Spine.Unity;
 
 public class PlayerController: MonoBehaviour
 {
-    public SkeletonAnimation skeletonAnimation;
-    public AnimationReferenceAsset idle, walking, dash, hit; 
-    public string currentState;
-    public float speed, dashSpeed;
-    private Rigidbody2D rigidbody;
+    // Все для анимации
+	public SkeletonAnimation skeletonAnimation;
+    public AnimationReferenceAsset idle, walking, dash, hit;
+	private Rigidbody2D rigidbody;
     public string currentAnimation;
     private Vector3 characterScale;
-    Vector2 movement;
 	public string previousState;
+	public string currentState;
+	
+	// Все для атаки ближнего боя
+	public Transform attackPoint;
+	public float attackDistance = 1f;
+	public LayerMask enemyLayers;
+	
+    // Все для передвижения
+	public float speed, dashSpeed;
+    Vector2 movement;
 
-    // Start is called before the first frame update
-    void Start()
+	// Все для получения урона
+	public float MaxHealthPoints;
+	public float currentHealthPoints;
+
+	void Start()
     {
 		rigidbody = GetComponent<Rigidbody2D>();
 		characterScale = transform.localScale; 
 		currentState = "Idle";
 		SetCharacterState(currentState);
-    }
+		MaxHealthPoints = 100;
+		currentHealthPoints = MaxHealthPoints;
+	}
 
-    // Update is called once per frame
     void Update()
     {
         Move();
     }
 
+
+    #region Animation
     // Set Character animation
     public void SetAnimation(AnimationReferenceAsset animation, bool loop, float timeScale)
     {
@@ -76,7 +91,9 @@ public class PlayerController: MonoBehaviour
 
 		currentState = state;
 	}
+    #endregion
 
+    #region Move
     public void Move()
     {
 		movement.x = Input.GetAxisRaw("Horizontal");
@@ -138,5 +155,49 @@ public class PlayerController: MonoBehaviour
         }
 		SetCharacterState("Dash");
     }
+    #endregion
+
+    #region Attack
+    public void Attack()
+	{
+		// Search Enemy
+		Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackDistance, enemyLayers);
+
+		// Damage to Enemy
+		foreach (var enemy in hitEnemies)
+		{
+			Debug.Log("Attack succsess to " + enemy.name);
+			enemy.GetComponent<Enemy>().TakeDamage(20);
+		}
+	}
+
+	private void OnDrawGizmosSelected()
+	{
+		if (attackPoint == null)
+			return;
+
+		Gizmos.DrawWireSphere(attackPoint.position, attackDistance);
+	}
+    #endregion
+
+    #region Damage
+    public void GetDamage(float damage)
+	{
+		currentHealthPoints -= damage;
+		print(currentHealthPoints);
+
+		Text HPBar = GameObject.FindGameObjectWithTag("HPBar").GetComponent<Text>();
+		HPBar.text = $"HP {currentHealthPoints}/100";
+
+		if (currentHealthPoints <= 0)
+			Die();
+	}
+
+	public void Die()
+	{
+		Destroy(gameObject, 0.9f);
+		print("YOU DEAD");
+	}
+    #endregion
 
 }
