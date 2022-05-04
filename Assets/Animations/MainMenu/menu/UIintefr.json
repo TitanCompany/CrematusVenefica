@@ -1,0 +1,196 @@
+{
+"skeleton": {
+	"hash": "866DJ/0vM0KxZCrQLQO4jsbgeWc",
+	"spine": "3.8.00",
+	"x": 770.45,
+	"y": 1001.11,
+	"width": 241.59,
+	"height": 280.61,
+	"images": "../../UIElements/Elements/MainMenu/1x/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "menuRoot", "x": 892.48, "y": 1137.91, "color": "f30a0aff" },
+	{ "name": "newGame2", "parent": "menuRoot", "x": 0.78, "y": 103.93 },
+	{ "name": "contin2", "parent": "menuRoot", "x": -0.19, "y": -0.24 },
+	{ "name": "exit2", "parent": "menuRoot", "x": -4.99, "y": -111.6 }
+],
+"slots": [
+	{ "name": "contin2", "bone": "contin2", "attachment": "contin" },
+	{ "name": "exit2", "bone": "exit2", "attachment": "exit" },
+	{ "name": "newGame2", "bone": "newGame2", "attachment": "newGame" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"newGame2": {
+				"newGame": { "x": -2.39, "y": 7.07, "scaleX": 0.6308, "scaleY": 0.6308, "width": 363, "height": 104 }
+			},
+			"exit2": {
+				"exit": { "x": 1.7, "y": 7.6, "scaleX": 0.6308, "scaleY": 0.6308, "width": 202, "height": 104 }
+			},
+			"contin2": {
+				"contin": { "x": -1.05, "y": 4.54, "scaleX": 0.6308, "scaleY": 0.6308, "width": 383, "height": 104 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {},
+	"continueHoverIn": {
+		"slots": {
+			"contin2": {
+				"color": [
+					{ "color": "ffffffff" },
+					{ "time": 0.3, "color": "fff5a8ff" }
+				]
+			}
+		},
+		"bones": {
+			"contin2": {
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.3 }
+				],
+				"scale": [
+					{ "curve": 0.25, "c3": 0.509, "c4": 0.82 },
+					{ "time": 0.3, "x": 1.29, "y": 1.29 }
+				]
+			}
+		}
+	},
+	"continueHoverOut": {
+		"slots": {
+			"contin2": {
+				"color": [
+					{ "color": "fff5a8ff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.3, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"contin2": {
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.3 }
+				],
+				"scale": [
+					{ "x": 1.29, "y": 1.29, "curve": 0.25, "c3": 0.695, "c4": 2.75 },
+					{ "time": 0.3 }
+				]
+			}
+		}
+	},
+	"exitHoverIn": {
+		"slots": {
+			"exit2": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.3, "color": "fff5a8ff" }
+				]
+			}
+		},
+		"bones": {
+			"exit2": {
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.3 }
+				],
+				"scale": [
+					{ "curve": 0.25, "c3": 0.509, "c4": 0.82 },
+					{ "time": 0.3, "x": 1.29, "y": 1.29 }
+				]
+			}
+		}
+	},
+	"exitHoverOut": {
+		"slots": {
+			"exit2": {
+				"color": [
+					{ "color": "fff5a8ff" },
+					{ "time": 0.3, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"exit2": {
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.3 }
+				],
+				"scale": [
+					{ "x": 1.29, "y": 1.29, "curve": 0.25, "c3": 0.695, "c4": 2.75 },
+					{ "time": 0.3 }
+				]
+			}
+		}
+	},
+	"first": {
+		"slots": {
+			"exit2": {
+				"color": [
+					{ "color": "ffffff00", "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			},
+			"newGame2": {
+				"color": [
+					{ "color": "ffffff00", "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			},
+			"contin2": {
+				"color": [
+					{ "color": "ffffff00", "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"newGameHoverIn": {
+		"slots": {
+			"newGame2": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.669, "c4": 1.72 },
+					{ "time": 0.3, "color": "fff6a8ff" }
+				]
+			}
+		},
+		"bones": {
+			"newGame2": {
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.3 }
+				],
+				"scale": [
+					{ "curve": 0.25, "c3": 0.509, "c4": 0.82 },
+					{ "time": 0.3, "x": 1.29, "y": 1.29 }
+				]
+			}
+		}
+	},
+	"newGameHoverOut": {
+		"slots": {
+			"newGame2": {
+				"color": [
+					{ "color": "fff6a8ff", "curve": 0.25, "c3": 0.656, "c4": 0.91 },
+					{ "time": 0.3, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"newGame2": {
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.3 }
+				],
+				"scale": [
+					{ "x": 1.29, "y": 1.29, "curve": 0.25, "c3": 0.695, "c4": 2.75 },
+					{ "time": 0.3 }
+				]
+			}
+		}
+	}
+}
+}

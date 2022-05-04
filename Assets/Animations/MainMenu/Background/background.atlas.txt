@@ -1,0 +1,131 @@
+
+background.png
+size: 4096,4096
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 15
+  rotate: true
+  xy: 2739, 2
+  size: 1162, 498
+  orig: 1162, 498
+  offset: 0, 0
+  index: -1
+Layer 152
+  rotate: true
+  xy: 2739, 2
+  size: 1162, 498
+  orig: 1162, 498
+  offset: 0, 0
+  index: -1
+Layer 1524
+  rotate: true
+  xy: 2739, 2
+  size: 1162, 498
+  orig: 1162, 498
+  offset: 0, 0
+  index: -1
+Layer 153
+  rotate: true
+  xy: 2739, 2
+  size: 1162, 498
+  orig: 1162, 498
+  offset: 0, 0
+  index: -1
+ground
+  rotate: false
+  xy: 2, 2
+  size: 2735, 1768
+  orig: 2735, 1768
+  offset: 0, 0
+  index: -1
+ground2
+  rotate: false
+  xy: 2, 2
+  size: 2735, 1768
+  orig: 2735, 1768
+  offset: 0, 0
+  index: -1
+ground3
+  rotate: false
+  xy: 2, 2
+  size: 2735, 1768
+  orig: 2735, 1768
+  offset: 0, 0
+  index: -1
+ground4
+  rotate: false
+  xy: 2, 2
+  size: 2735, 1768
+  orig: 2735, 1768
+  offset: 0, 0
+  index: -1
+moon
+  rotate: false
+  xy: 2805, 1772
+  size: 97, 224
+  orig: 97, 224
+  offset: 0, 0
+  index: -1
+moon2
+  rotate: false
+  xy: 2739, 1329
+  size: 441, 441
+  orig: 447, 448
+  offset: 2, 2
+  index: -1
+sky
+  rotate: false
+  xy: 2, 1772
+  size: 2801, 1905
+  orig: 2801, 1905
+  offset: 0, 0
+  index: -1
+
+background2.png
+size: 4096,4096
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 16
+  rotate: false
+  xy: 2, 2
+  size: 2568, 1540
+  orig: 2568, 1540
+  offset: 0, 0
+  index: -1
+Layer 162
+  rotate: false
+  xy: 2, 2
+  size: 2568, 1540
+  orig: 2568, 1540
+  offset: 0, 0
+  index: -1
+Layer 163
+  rotate: false
+  xy: 2, 2
+  size: 2568, 1540
+  orig: 2568, 1540
+  offset: 0, 0
+  index: -1
+Layer 9
+  rotate: false
+  xy: 2, 1544
+  size: 2538, 1588
+  orig: 2538, 1588
+  offset: 0, 0
+  index: -1
+Layer 92
+  rotate: false
+  xy: 2, 1544
+  size: 2538, 1588
+  orig: 2538, 1588
+  offset: 0, 0
+  index: -1
+Layer 93
+  rotate: false
+  xy: 2, 1544
+  size: 2538, 1588
+  orig: 2538, 1588
+  offset: 0, 0
+  index: -1
