@@ -1,0 +1,27 @@
+
+UIintefr.png
+size: 2048,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+contin
+  rotate: false
+  xy: 2, 2
+  size: 383, 104
+  orig: 383, 104
+  offset: 0, 0
+  index: -1
+exit
+  rotate: false
+  xy: 387, 2
+  size: 202, 104
+  orig: 202, 104
+  offset: 0, 0
+  index: -1
+newGame
+  rotate: false
+  xy: 772, 2
+  size: 363, 104
+  orig: 363, 104
+  offset: 0, 0
+  index: -1
