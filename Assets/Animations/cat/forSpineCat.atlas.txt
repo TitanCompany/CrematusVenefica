@@ -1,0 +1,251 @@
+
+forSpineCat.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bas
+  rotate: false
+  xy: 65, 89
+  size: 7, 8
+  orig: 7, 8
+  offset: 0, 0
+  index: -1
+effect1
+  rotate: false
+  xy: 37, 98
+  size: 9, 27
+  orig: 9, 27
+  offset: 0, 0
+  index: -1
+effect2
+  rotate: false
+  xy: 2, 45
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+effect3
+  rotate: false
+  xy: 2, 80
+  size: 33, 45
+  orig: 33, 45
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 37, 49
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+hit1
+  rotate: true
+  xy: 28, 5
+  size: 21, 18
+  orig: 21, 18
+  offset: 0, 0
+  index: -1
+l-arm-d
+  rotate: false
+  xy: 71, 58
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+l-leg-d
+  rotate: false
+  xy: 71, 58
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+l-arm-mid
+  rotate: true
+  xy: 65, 37
+  size: 6, 3
+  orig: 6, 3
+  offset: 0, 0
+  index: -1
+l-arm-u
+  rotate: false
+  xy: 51, 67
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+l-ear
+  rotate: true
+  xy: 48, 99
+  size: 6, 10
+  orig: 6, 10
+  offset: 0, 0
+  index: -1
+l-leg-mid
+  rotate: false
+  xy: 55, 34
+  size: 3, 9
+  orig: 3, 9
+  offset: 0, 0
+  index: -1
+l-leg-u
+  rotate: false
+  xy: 54, 85
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+mask
+  rotate: true
+  xy: 55, 110
+  size: 15, 18
+  orig: 15, 18
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 60, 99
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+newArm1
+  rotate: true
+  xy: 55, 29
+  size: 3, 9
+  orig: 3, 9
+  offset: 0, 0
+  index: -1
+newArm2
+  rotate: false
+  xy: 60, 34
+  size: 3, 9
+  orig: 3, 9
+  offset: 0, 0
+  index: -1
+newHead
+  rotate: false
+  xy: 37, 64
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+newLeg1Down
+  rotate: false
+  xy: 73, 84
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+newLeg1Up
+  rotate: false
+  xy: 63, 63
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+newLeg2Down
+  rotate: false
+  xy: 73, 79
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+newLeg2Up
+  rotate: false
+  xy: 63, 55
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+newTail
+  rotate: false
+  xy: 64, 50
+  size: 9, 3
+  orig: 9, 3
+  offset: 0, 0
+  index: -1
+newThors
+  rotate: true
+  xy: 48, 2
+  size: 24, 12
+  orig: 24, 12
+  offset: 0, 0
+  index: -1
+pelwis
+  rotate: false
+  xy: 37, 81
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+r-arm-d
+  rotate: false
+  xy: 73, 74
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+r-leg-d
+  rotate: false
+  xy: 73, 74
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+r-arm-mid
+  rotate: true
+  xy: 71, 63
+  size: 6, 3
+  orig: 6, 3
+  offset: 0, 0
+  index: -1
+r-arm-u
+  rotate: false
+  xy: 52, 53
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+r-ear
+  rotate: true
+  xy: 52, 45
+  size: 6, 10
+  orig: 6, 10
+  offset: 0, 0
+  index: -1
+r-leg-mid
+  rotate: true
+  xy: 64, 45
+  size: 3, 9
+  orig: 3, 9
+  offset: 0, 0
+  index: -1
+r-leg-u
+  rotate: false
+  xy: 62, 71
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 28
+  size: 51, 15
+  orig: 51, 15
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 48, 107
+  size: 3, 18
+  orig: 3, 18
+  offset: 0, 0
+  index: -1
+tors
+  rotate: false
+  xy: 2, 2
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
