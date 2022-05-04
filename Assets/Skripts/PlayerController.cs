@@ -6,7 +6,7 @@ using Spine.Unity;
 public class PlayerController: MonoBehaviour
 {
     public SkeletonAnimation skeletonAnimation;
-    public AnimationReferenceAsset idle, walking, dash; 
+    public AnimationReferenceAsset idle, walking, dash, hit; 
     public string currentState;
     public float speed, dashSpeed;
     private Rigidbody2D rigidbody;
@@ -64,6 +64,10 @@ public class PlayerController: MonoBehaviour
         {
 			SetAnimation(dash, false, 2f);
         }
+		else if (state.Equals("Hit"))
+        {
+			SetAnimation(hit, false, 2f);
+        }
 
 		else 
 		{
@@ -117,6 +121,11 @@ public class PlayerController: MonoBehaviour
 				skeletonAnimation.Skeleton.SetSkin("swordsman");
 			skeletonAnimation.Skeleton.SetSlotsToSetupPose();
 		}
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+			SetCharacterState("Hit");
+        }
 
 	}
 

@@ -1558,6 +1558,7 @@ MonoBehaviour:
   idle: {fileID: 11400000, guid: 23674bcc55fa053428a770a8149febfe, type: 2}
   walking: {fileID: 11400000, guid: 6b3bb22d411bb084d96000280e045cef, type: 2}
   dash: {fileID: 11400000, guid: e5f3b31ae2ed0fa438160f89948f28eb, type: 2}
+  hit: {fileID: 11400000, guid: 5ab512e334fdad64f8111f9b0a674f0b, type: 2}
   currentState: 
   speed: 4
   dashSpeed: 6
@@ -1575,6 +1576,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1657,12 +1659,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11}
+  m_LocalPosition: {x: -1.13, y: -0.76, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbec352379eea48459b8660449f06676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 440709448}
+  min: 4
+  max: 16
 --- !u!1 &685109394
 GameObject:
   m_ObjectHideFlags: 0
@@ -6579,7 +6596,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1274048306
 Rigidbody2D:
@@ -6641,8 +6658,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonAnimation: {fileID: 1274048302}
-  idle: {fileID: 0}
-  run: {fileID: 0}
+  idle: {fileID: 11400000, guid: 0adb55252e41f3f4385b40b4bea66db2, type: 2}
+  run: {fileID: 11400000, guid: 659acb837ba5ba74fa7ddb9cac98adcb, type: 2}
   currentState: 
   speed: 0
   dashSpeed: 0
