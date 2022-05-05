@@ -13,17 +13,11 @@ public abstract class Enemy : MonoBehaviour
 	public abstract void Attack(Collider2D player);
 	public abstract void Die();
 
-	Transform enemyTransform;
-	SpriteRenderer enemySprite;
-
-
 	private void Update()
 	{ }
 
 	private void Start()
 	{
-		enemyTransform = GetComponent<Transform>();
-		enemySprite = GetComponent<SpriteRenderer>();
 	}
 
 	// Search and go to Player

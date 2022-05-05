@@ -5,7 +5,7 @@ using UnityEngine;
 public class CatController : Enemy
 {
 	public SkeletonAnimation skeletonAnimation;
-	public AnimationReferenceAsset idle, run;
+	public AnimationReferenceAsset idle, run, damage, hit, death, newCatRun;
 	public string currentState;
 	public float speed, dashSpeed;
 	private Rigidbody2D rigidbody;
@@ -14,23 +14,29 @@ public class CatController : Enemy
 	Vector2 movement;
 	public string previousState;
 
-	// Для AStar-Path
+	// Для AStar-Pathfinder
 	private AIPath aiPath;
 	private AIDestinationSetter aiTarget;
 
 	public Transform searchPoint;
 	public float searchDistance = 12f;
 
+	// Для атаки
 	public Transform attackPoint;
 	public float attackDistance = 2f;
+	public LayerMask layerPlayer;
+	// Определение частоты атаки.
+	public float attackRate = 2f;
+	float nextAttackTime = 0f;
+
 
 	Transform enemyTransform;
 
+	// Для получения урона
 	public override int MaxHP { get; set; }
 	public override int CurrentHP { get; set; }
 	public override bool IsDie { get; set; }
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
@@ -40,9 +46,12 @@ public class CatController : Enemy
 		aiPath = GetComponent<AIPath>();
 		aiTarget = GetComponent<AIDestinationSetter>();
 		enemyTransform = GetComponent<Transform>();
+		layerPlayer = LayerMask.GetMask("Player");
+
+		MaxHP = 50;
+		CurrentHP = MaxHP;
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
 		InvokeRepeating("SearchPath", 1f, .5f);
@@ -50,11 +59,22 @@ public class CatController : Enemy
 			enemyTransform.localScale = new Vector3(2f, 2f, 2f);
 		else if (aiPath.desiredVelocity.x <= -.01f)
 			enemyTransform.localScale = new Vector3(-2f, 2f, 2f);
+
+		// Attack
+		Collider2D player = Physics2D.OverlapCircle(attackPoint.position, attackDistance, layerPlayer);
+		if (player != null && Time.time >= nextAttackTime)
+		{
+			Attack(player);
+			nextAttackTime = Time.time + 3f / attackRate;
+		}
 	}
 
 	void SearchPath()
 	{
 		SearchPathToPlayer(aiTarget, searchPoint, searchDistance);
+		if (aiTarget != null)
+			SetCharacterState("Run");
+		else SetCharacterState("Idle");
 	}
 
 	#region Animation
@@ -65,7 +85,14 @@ public class CatController : Enemy
 		{
 			SetAnimation(run, true, 2f);
 		}
-
+		else if (state.Equals("Death"))
+		{
+			SetAnimation(death, false, 1f);
+		}
+		else if (state.Equals("Hit"))
+		{
+			SetAnimation(hit, false, 2f);
+		}
 		else
 		{
 			SetAnimation(idle, true, 1f);
@@ -97,10 +124,24 @@ public class CatController : Enemy
 
 	public override void TakeDamage(int damage)
 	{
+		if (!IsDie)
+		{
+			CurrentHP -= damage;
 
+			if (CurrentHP <= 0)
+				Die();
+		}
 	}
-	public override void Attack(Collider2D player) { }
-	public override void Die() { }
+
+	public override void Attack(Collider2D player)
+	{
+		player.GetComponent<PlayerController>().GetDamage(Damage);
+	}
+	public override void Die() 
+	{
+		IsDie = true;
+		SetCharacterState("Death");
+	}
 
 	private void OnDrawGizmosSelected()
 	{

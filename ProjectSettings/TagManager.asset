@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - HPBar
   layers:
   - Default
   - TransparentFX
@@ -12,17 +13,10 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< HEAD
   - Obstracle
   - Enemy
   - NPC
   - Player
-=======
-  - Enemies
-  - 
-  - 
-  - 
->>>>>>> 0614dcac7391c0ea74a88362499d57db6dba056d
   - 
   - 
   - 
