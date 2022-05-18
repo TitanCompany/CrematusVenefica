@@ -1,48 +1,78 @@
 using Spine.Unity;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
 	// Все для анимации
 	public SkeletonAnimation skeletonAnimation;
-	public AnimationReferenceAsset idle, walking, dash, sword_strike, archery;
-	private Rigidbody2D rigidbody;
-	public string currentAnimation;
-	private Vector3 characterScale;
-	public string previousState;
-	public string currentState;
+	public AnimationReferenceAsset idle, walking, dash, sword, archery;
+	public AnimationReferenceAsset[] anims;
 
-	// Все для атаки ближнего боя
+	internal AnimationController animController;
+
+	private Level playerLevel;
+
+	//private Rigidbody2D _rigidbody;
+	//public string currentAnimation;
+	//private Vector3 characterScale;
+	/*public string previousState;
+	public string currentState;*/
+
+	/*// Все для атаки ближнего боя
 	public Transform attackPoint;
 	public float attackDistance = 1f;
-	public LayerMask enemyLayers;
+	public LayerMask enemyLayers;*/
 
 	// Все для передвижения
-	public float speed, dashSpeed;
-	Vector2 movement;
+	//public float speed, dashSpeed;
+	//Vector2 movement;
 
 	// Все для получения урона
-	public float MaxHealthPoints;
-	public float currentHealthPoints;
+	//public float MaxHealthPoints;
+	//public float currentHealthPoints;
 
 	void Start()
 	{
-		rigidbody = GetComponent<Rigidbody2D>();
-		characterScale = transform.localScale;
-		currentState = "Idle";
-		SetCharacterState(currentState);
-		MaxHealthPoints = 100;
-		currentHealthPoints = MaxHealthPoints;
+		animController = new AnimationController(
+			skeletonAnimation,
+			new AnimationController.Animation(idle, true, 1f),
+			new AnimationController.Animation(walking, true, 1f),
+			new AnimationController.Animation(dash, false, 2f),
+			new AnimationController.Animation(sword, false, 2f),
+			new AnimationController.Animation(archery, false, 1f)
+			);
+		animController.SetSpecialAnims("dash");
+		animController.SetCharacterState("idle");
+
+
+		//_rigidbody = GetComponent<Rigidbody2D>();
+		//characterScale = transform.localScale;
+		//MaxHealthPoints = 100;
+		//currentHealthPoints = MaxHealthPoints;
 	}
 
+	float timer = 0;
 	void Update()
 	{
-		Move();
+		if (Input.GetKey(KeyCode.Tab) && timer > 1f)
+		{
+			ChangeAnimMode(ref timer);
+		}
+		timer += Time.deltaTime;
 	}
 
+	// Изменяет скин игрока.
+	void ChangeAnimMode(ref float timer)
+	{
+		if (animController.skeletonAnimation.skeleton.Skin.ToString() == "swordsman")
+			animController.skeletonAnimation.Skeleton.SetSkin("archer");
+		else
+			animController.skeletonAnimation.Skeleton.SetSkin("swordsman");
 
-	#region Animation
+		timer = 0;
+	}
+
+	/*#region Animation
 	// Set Character animation
 	public void SetAnimation(AnimationReferenceAsset animation, bool loop, float timeScale)
 	{
@@ -88,21 +118,21 @@ public class PlayerController : MonoBehaviour
 
 		currentState = state;
 	}
-	#endregion
+	#endregion*/
 
-	#region Move
+	/*#region Move
 	public void Move()
 	{
 		movement.x = Input.GetAxisRaw("Horizontal");
 		movement.y = Input.GetAxisRaw("Vertical");
 
-		rigidbody.MovePosition(rigidbody.position + movement * speed * Time.fixedDeltaTime);
+		_rigidbody.MovePosition(_rigidbody.position + movement * speed * Time.fixedDeltaTime);
 
 		if (movement.x != 0 || movement.y != 0)
 		{
-			if (!currentState.Equals("Dash"))
+			if (!currentState.Equals("dash"))
 			{
-				SetCharacterState("Walking");
+				animController.SetCharacterState("run");
 			}
 
 			if (movement.x > 0)
@@ -116,9 +146,9 @@ public class PlayerController : MonoBehaviour
 		}
 		else
 		{
-			if (!currentState.Equals("Dash"))
+			if (!currentState.Equals("dash"))
 			{
-				SetCharacterState("Idle");
+				animController.SetCharacterState("idle");
 			}
 
 		}
@@ -138,7 +168,7 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetButtonDown("Fire1"))
 		{
-			SetCharacterState("Hit");
+			//SetCharacterState("Hit");
 			if (skeletonAnimation.skeleton.Skin.ToString() == "swordsman")
 				SwordAttack();
 			else BowAttack();
@@ -147,12 +177,12 @@ public class PlayerController : MonoBehaviour
 
 	public void Dash()
 	{
-		rigidbody.velocity = new Vector2(rigidbody.velocity.x, dashSpeed);
-		if (!currentState.Equals("Dash"))
+		//_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, dashSpeed);
+		if (!currentState.Equals("dash"))
 		{
 			previousState = currentState;
 		}
-		SetCharacterState("Dash");
+		animController.SetCharacterState("dash");
 	}
 	#endregion
 
@@ -170,9 +200,9 @@ public class PlayerController : MonoBehaviour
 		// Damage to Enemy
 		foreach (var enemy in hitEnemies)
 		{
-			Enemy en=enemy.GetComponent<Enemy>();
-			en.TakeDamage(20);
-			print(en.MaxHP + " " + en.CurrentHP);
+			Entity en = enemy.GetComponent<Entity>();
+			en.TakeDamage(20f);
+			print(en.maxHP);
 		}
 	}
 
@@ -203,5 +233,5 @@ public class PlayerController : MonoBehaviour
 		Destroy(gameObject, 0.9f);
 		print("YOU DEAD");
 	}
-	#endregion
+	#endregion*/
 }

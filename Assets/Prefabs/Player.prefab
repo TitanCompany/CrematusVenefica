@@ -45,6 +45,13 @@ GameObject:
   - component: {fileID: 2542828488488131968}
   - component: {fileID: 2542828488488131971}
   - component: {fileID: 2542828488488131969}
+  - component: {fileID: 1507366206}
+  - component: {fileID: 1233778345091598939}
+  - component: {fileID: 1507366215}
+  - component: {fileID: 1507366216}
+  - component: {fileID: 1507366217}
+  - component: {fileID: 1507366218}
+  - component: {fileID: 1507366219}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -191,9 +198,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 9999
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -216,17 +223,114 @@ MonoBehaviour:
   idle: {fileID: 11400000, guid: 23674bcc55fa053428a770a8149febfe, type: 2}
   walking: {fileID: 11400000, guid: 6b3bb22d411bb084d96000280e045cef, type: 2}
   dash: {fileID: 11400000, guid: e5f3b31ae2ed0fa438160f89948f28eb, type: 2}
-  sword_strike: {fileID: 0}
-  archery: {fileID: 0}
+  sword: {fileID: 11400000, guid: 5ab512e334fdad64f8111f9b0a674f0b, type: 2}
+  archery: {fileID: 11400000, guid: e9d732b1d087cff4ebcda1c88ff9462e, type: 2}
+  anims: []
+--- !u!114 &1507366206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542828488488131974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e3ac46647133c4e829c05ec699a329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   currentAnimation: 
   previousState: 
   currentState: 
-  attackPoint: {fileID: 1384494407}
-  attackDistance: 0.4
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 0
+--- !u!114 &1233778345091598939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542828488488131974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7541ef2146550d54eb91625960596de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   speed: 5
-  dashSpeed: 6
-  MaxHealthPoints: 0
-  currentHealthPoints: 0
+--- !u!114 &1507366215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542828488488131974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d2041d5c8180d478a4e9f9e9f7b780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 100
+  dashDuration: 0.5
+  dashTimer: 0
+--- !u!114 &1507366216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542828488488131974}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ca35c127fde5f41a4297a4fe049b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 16
+  attackRate: 2
+  attackPoint: {fileID: 1384494407}
+  attackRadius: 0.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &1507366217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542828488488131974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 375f81bebaf827042b60b5db5c088bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 10
+  currentHP: 0
+  speed: 0
+  expirience: 0
+--- !u!114 &1507366218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542828488488131974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149cd689b14034742a55e98374d84bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPoint: {fileID: 1384494407}
+  attackRadius: 0.5
+  attackRate: 2
+  damage: 14
+--- !u!114 &1507366219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542828488488131974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9209b969f162340bc5fdf0593726f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  experience: 0

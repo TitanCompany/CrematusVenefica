@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: forSpineCat_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 153d8a25a896812438decddccfcdf492, type: 2}
+  - {fileID: 11400000, guid: eb40304682c3423408b7e71a2c22a46e, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: 81050de0b646cc045b39934dc0860db4, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: 5d0a076d39f8dd04ba2cd13aee5bc1e0, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0

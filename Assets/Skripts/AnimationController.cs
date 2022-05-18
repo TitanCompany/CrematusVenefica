@@ -1,44 +1,36 @@
+using Spine;
 using Spine.Unity;
 using UnityEngine;
 
-public class AnimationController: MonoBehaviour
+public class AnimationController : MonoBehaviour
 {
-	public Animation[] anims;
-	public GameObject obj;
-	public Animation standartAnim;
+	//public SkeletonAnimation skeleton;
+	//[SerializeField]
+	//public (AnimationReferenceAsset, float, bool)[] assets;
+	//public AnimationReferenceAsset idleAsset;
 
-	private SkeletonAnimation skeletonAnimation;
-	private string currentAnimation;
-	private string previousState;
-	private string currentState;
+	public Animation[] anims;
+	public Animation standartAnim;
+	internal string[] spesialAnims;
+
+	internal SkeletonAnimation skeletonAnimation;
+	public string currentAnimation;
+	public string previousState;
+	public string currentState;
 
 	private string skin;
 
 	/// <summary>
-	/// Конструктор Контроллера анимаций.
-	/// Стандартная анимация задана по умолчанию (idle, true, 1f).
+	/// Создает базовый присет анимаций.
 	/// </summary>
-	/// <param name="anims">Массив всех возможных анимаций, за исключением стандартной.</param>
-	/// <param name="obj">Объект, на который будет примерятся анимация.</param>
-	public AnimationController(Animation[] anims, GameObject obj)
+	/// <param name="skeleton">Задает скелет для Spine.Skeleton</param>
+	/// <param name="standartAnim">Задает страндартную анимация (например: idle)</param>
+	/// <param name="anims">Перечисление остальных анимаций</param>
+	public AnimationController(SkeletonAnimation skeleton, Animation standartAnim, params Animation[] anims)
 	{
-		this.anims = anims;
-		this.obj = obj;
-		var idle = new AnimationReferenceAsset();
-		standartAnim = new Animation(idle, true, 1f);
-	}
-
-	/// <summary>
-	/// Конструктор Контроллера анимаций.
-	/// </summary>
-	/// <param name="anims">Массив всех возможных анимаций, за исключением стандартной.</param>
-	/// <param name="obj">Объект, на который будет примерятся анимация.</param>
-	/// <param name="standartAnim">Устанавливает стандартную анмацию.</param>
-	public AnimationController(Animation[] anims, GameObject obj, Animation standartAnim)
-	{
-		this.anims = anims;
-		this.obj = obj;
+		this.skeletonAnimation = skeleton;
 		this.standartAnim = standartAnim;
+		this.anims = anims;
 	}
 
 	/// <summary>
@@ -47,24 +39,56 @@ public class AnimationController: MonoBehaviour
 	/// <param name="state">Название анимации.</param>
 	public void SetCharacterState(string state)
 	{
+		var isFind = false;
 		foreach (var anim in anims)
 			if (anim.asset.name == state)
 			{
 				SetAnimation(anim);
+				isFind = true;
 				return;
 			}
 
-		SetAnimation(standartAnim);
+		if (!isFind) SetAnimation(standartAnim);
+		previousState = currentState;
+		currentState = state;
 	}
 
-	public void SetAnimation(Animation anim)
+	/// <summary>
+	/// Устанавливает анимацию.
+	/// </summary>
+	/// <param name="anim"></param>
+	private void SetAnimation(Animation anim)
 	{
 		if (anim.asset.name == currentAnimation)
 			return;
-		Spine.TrackEntry animationEntry = skeletonAnimation.state.SetAnimation(0, anim.asset, anim.isLoop);
+		TrackEntry animationEntry = skeletonAnimation.state.SetAnimation(0, anim.asset, anim.isLoop);
 		animationEntry.TimeScale = anim.timeScale;
-		//animationEntry.Complete += AnimationEntryComplete;
+		animationEntry.Complete += AnimationEntryComplete;
 		currentAnimation = anim.asset.name;
+	}
+
+	/// <summary>
+	/// Изменяет анимацию, после ее завершения на предидущую.
+	/// Если это необходимо.
+	/// </summary>
+	/// <param name="trackEntry"></param>
+	private void AnimationEntryComplete(TrackEntry trackEntry)
+	{
+		foreach (var anim in spesialAnims)
+			if (currentState == anim)
+			{
+				SetCharacterState(previousState);
+			}
+
+		/*if (currentState.Equals("dash"))
+		{
+			SetCharacterState(previousState);
+		}*/
+	}
+
+	public void SetSpecialAnims(params string[] spesialAnims)
+	{
+		this.spesialAnims = spesialAnims;
 	}
 
 	/// <summary>

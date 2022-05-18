@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - HPBar
+  - SceneManager
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
   m_Name: forSpineCat_Atlas
   m_EditorClassIdentifier: 
-  atlasFile: {fileID: 4900000, guid: fd83d8639f24d7d428f1581eddb2675a, type: 3}
+  atlasFile: {fileID: 4900000, guid: 6d573653fcdfae548af88849c169ffd2, type: 3}
   materials:
-  - {fileID: 2100000, guid: 6ac734614a310254e97730c2574ab35c, type: 2}
+  - {fileID: 2100000, guid: af9fcda6c7d28874980e4fbe8249454b, type: 2}
