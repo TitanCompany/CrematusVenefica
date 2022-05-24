@@ -29,7 +29,7 @@ public class PlayerShoot : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 lookDir = mousePos - rbody.position;
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        Debug.Log(angle);
+        //Debug.Log(angle);
         if (angle > 0)
             angle = 0;
         if (angle < -180)

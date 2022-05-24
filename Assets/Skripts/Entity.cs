@@ -58,6 +58,7 @@ public class Entity : MonoBehaviour
 		if (base.gameObject.name != "Player")
 		{
 			cat.SetCharacterState("Death");
+			cat.enabled = false;
 		}
 		else
 		{
