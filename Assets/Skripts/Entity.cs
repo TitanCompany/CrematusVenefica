@@ -6,7 +6,7 @@ public class Entity : MonoBehaviour
 {
 	public float maxHP;
 	[SerializeField]
-	private float currentHP;
+	public float currentHP;
 	public float speed;
 	public int expirience;
    
