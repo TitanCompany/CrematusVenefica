@@ -16,24 +16,23 @@ public class PlayerDash : MonoBehaviour
 	}
 
 	public float dashSpeed;
-	public float dashDuration;
-	public float dashTimer;
+	public float startDashTime;
+	private float dashTime;
 
 	private DashDirection dashDirection;
 
-
-	private PlayerController plController;
+	private AnimationController animController;
 	private Rigidbody2D body;
-	private Vector2 movement;
 
 	private float x;
 	private float y;
 
 	void Start()
 	{
-		plController = GetComponent<PlayerController>();
 		body = GetComponent<Rigidbody2D>();
+		animController = GetComponent<AnimationController>();
 		dashDirection = DashDirection.NoDirection;
+		dashTime = startDashTime;
 	}
 
 	void Update()
@@ -43,11 +42,12 @@ public class PlayerDash : MonoBehaviour
 		y = Input.GetAxis("Vertical");
 		if ((x != 0 || y != 0) && Input.GetKey(KeyCode.LeftShift))
 		{
-			KeyCheck();
+			CheckDirection();
 			Dash();
 		}
 	}
-	void KeyCheck()
+
+	void CheckDirection()
 	{
 		if (x > 0 && y > 0) dashDirection = DashDirection.RightUp;
 		else if (x < 0 && y > 0) dashDirection = DashDirection.LeftUp;
@@ -66,48 +66,50 @@ public class PlayerDash : MonoBehaviour
 	{
 		if (dashDirection != DashDirection.NoDirection)
 		{
-			if (dashTimer >= dashDuration)
+			float time = 1f;
+
+			if (dashTime <= 0)
 			{
-				dashTimer = 0;
+				dashTime = startDashTime;
 				dashDirection = DashDirection.NoDirection;
 				body.velocity = Vector2.zero;
 			}
 			else
 			{
-				dashTimer += Time.deltaTime;
+				dashTime -= Time.deltaTime;
 				switch (dashDirection)
 				{
 					case DashDirection.Left:
-						body.velocity = Vector2.left * dashSpeed;
-						plController.animController.SetCharacterState("dash");
+						animController.SetCharacterState("dash", 2f);
+						body.velocity = Vector2.left * dashSpeed * time;
 						break;
 					case DashDirection.Right:
-						body.velocity = Vector2.right * dashSpeed;
-						plController.animController.SetCharacterState("dash");
+						animController.SetCharacterState("dash", 2f);
+						body.velocity = Vector2.right * dashSpeed * time;
 						break;
 					case DashDirection.Up:
-						body.velocity = Vector2.up * dashSpeed;
-						plController.animController.SetCharacterState("dash");
+						animController.SetCharacterState("dash", 2f);
+						body.velocity = Vector2.up * dashSpeed * time;
 						break;
 					case DashDirection.Down:
-						body.velocity = Vector2.down * dashSpeed;
-						plController.animController.SetCharacterState("dash");
+						animController.SetCharacterState("dash", 2f);
+						body.velocity = Vector2.down * dashSpeed * time;
 						break;
 					case DashDirection.LeftUp:
-						body.velocity = Vector2.left * dashSpeed + Vector2.up * dashSpeed;
-						plController.animController.SetCharacterState("dash");
+						animController.SetCharacterState("dash", 2f);
+						body.velocity = (Vector2.left + Vector2.up) / 2 * dashSpeed * time;
 						break;
 					case DashDirection.LeftDown:
-						body.velocity = Vector2.left * dashSpeed + Vector2.down * dashSpeed;
-						plController.animController.SetCharacterState("dash");
+						animController.SetCharacterState("dash", 2f);
+						body.velocity = (Vector2.left + Vector2.down) / 2 * dashSpeed * time;
 						break;
 					case DashDirection.RightUp:
-						body.velocity = Vector2.right * dashSpeed + Vector2.up * dashSpeed;
-						plController.animController.SetCharacterState("dash");
+						animController.SetCharacterState("dash", 2f);
+						body.velocity = (Vector2.right + Vector2.up) / 2 * dashSpeed * time;
 						break;
 					case DashDirection.RightDown:
-						body.velocity = Vector2.right * dashSpeed + Vector2.down * dashSpeed;
-						plController.animController.SetCharacterState("dash");
+						animController.SetCharacterState("dash", 2f);
+						body.velocity = (Vector2.right + Vector2.down) / 2 * dashSpeed * time;
 						break;
 					default: break;
 				}

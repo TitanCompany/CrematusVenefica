@@ -7,12 +7,12 @@ public class PlayerMove : MonoBehaviour
 
 	private Vector2 movement;
 	private Rigidbody2D body;
-	private PlayerController plController;
+	private AnimationController animController;
 
 	void Start()
 	{
 		body = GetComponent<Rigidbody2D>();
-		plController = GetComponent<PlayerController>();
+		animController = GetComponent<AnimationController>();
 	}
 
 	void Update()
@@ -27,18 +27,19 @@ public class PlayerMove : MonoBehaviour
 
 		if (movement.x != 0 || movement.y != 0)
 		{
-			if (plController.animController.currentState != "dash")
-				plController.animController.SetCharacterState("run");
+			if (animController.currentAnimation != "dash" && animController.currentAnimation != "sword_strike")
+			{
+				animController.SetCharacterState("run", 1f, true);
+			}
 
 			if (movement.x > 0)
 				transform.localScale = new Vector2(Math.Abs(transform.localScale.x), transform.localScale.y);
 			else if (movement.x < 0)
 				transform.localScale = new Vector2(-Math.Abs(transform.localScale.x), transform.localScale.y);
+			
+			body.MovePosition(body.position + movement * speed * Time.fixedDeltaTime);
 		}
-		else
-			if (plController.animController.currentState != "dash")
-				plController.animController.SetCharacterState("idle");
-
-		body.MovePosition(body.position + movement * speed * Time.fixedDeltaTime);
+		else if (animController.currentState != "dash" && animController.currentState != "sword_strike" && animController.currentState != "idle")
+			animController.SetCharacterState("idle", 1, true);
 	}
 }

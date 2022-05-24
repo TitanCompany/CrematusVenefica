@@ -9,7 +9,7 @@ public class Root : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

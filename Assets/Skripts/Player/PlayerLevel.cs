@@ -21,11 +21,6 @@ public class PlayerLevel : MonoBehaviour
 		prevLevel = Level.Nobody;
 	}
 
-	private void Update()
-	{
-		
-	}
-
 	public void AddExp(int expCount)
 	{
 		experience += expCount;

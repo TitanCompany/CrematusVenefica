@@ -207,7 +207,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &2542828488488131969
 MonoBehaviour:
@@ -243,9 +243,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e3ac46647133c4e829c05ec699a329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skeletonAnimation: {fileID: 2542828488488131975}
+  idleAsset: {fileID: 11400000, guid: 23674bcc55fa053428a770a8149febfe, type: 2}
+  assets:
+  - {fileID: 11400000, guid: 6b3bb22d411bb084d96000280e045cef, type: 2}
+  - {fileID: 11400000, guid: e5f3b31ae2ed0fa438160f89948f28eb, type: 2}
+  - {fileID: 11400000, guid: 5ab512e334fdad64f8111f9b0a674f0b, type: 2}
+  - {fileID: 11400000, guid: e9d732b1d087cff4ebcda1c88ff9462e, type: 2}
+  - {fileID: 11400000, guid: 14f2dcba26e04504a834b2507ed42216, type: 2}
+  - {fileID: 11400000, guid: 0660519d4ad595d45808b94ef94030e9, type: 2}
   currentAnimation: 
   previousState: 
   currentState: 
+  spesialAnims:
+  - dash
+  - sword_strike
 --- !u!114 &1233778345091598939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,9 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d2041d5c8180d478a4e9f9e9f7b780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 100
-  dashDuration: 0.5
-  dashTimer: 0
+  dashSpeed: 12
+  startDashTime: 0.5
 --- !u!114 &1507366216
 MonoBehaviour:
   m_ObjectHideFlags: 0
