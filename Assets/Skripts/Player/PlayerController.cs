@@ -3,9 +3,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	internal AnimationController animController;
+	// Все для анимации
+	public SkeletonAnimation skeletonAnimation;
+	public AnimationReferenceAsset idle, walking, dash, sword, archery;
+	public AnimationReferenceAsset[] anims;
+	public Entity entity;
+	public PlayerAttack playerAttack;
+	public int maxRoots;
+	public int numRoots;
 
-	private Entity entity; 
+	internal AnimationController animController;
 
 	private Level playerLevel;
 
@@ -13,11 +20,21 @@ public class PlayerController : MonoBehaviour
 	{
 		animController = GetComponent<AnimationController>();
 		entity = GetComponent<Entity>();
+		playerAttack = GetComponent<PlayerAttack>();
+		numRoots = maxRoots - 1;
 	}
 
 	float timer = 0;
 	void Update()
 	{
+		if (Input.GetKey(KeyCode.Tab) && timer > 1f)
+			ChangeAnimMode(timer);
+		if (Input.GetKey(KeyCode.Q) && timer > 1f)
+			Heal(timer);
+		if (Input.GetKey(KeyCode.F5) && timer > 1f)
+			Save();
+		if (Input.GetKey(KeyCode.F6) && timer > 1f)
+			Load();
 		if (Input.GetKey(KeyCode.Tab) && timer > .5f)
 		{
 			ChangeAnimMode(timer);
@@ -33,6 +50,39 @@ public class PlayerController : MonoBehaviour
 		else
 			animController.skeletonAnimation.Skeleton.SetSkin("swordsman");
 
-		this.timer = 0;
+		timer = 0;
+	}
+
+	void Heal(float timer)
+    {
+		if (entity.currentHP == entity.maxHP)
+			return;
+		if (numRoots == 0)
+			return;
+		entity.currentHP += entity.maxHP*0.20f;
+		if (entity.currentHP > entity.maxHP)
+			entity.currentHP = entity.maxHP;
+		numRoots -= 1;
+		timer = 0;
+	}
+
+	public void Save()
+    {
+		SaveLoadSystem.Save(this);
+    }
+
+	public void Load()
+    {
+		PlayerData data = SaveLoadSystem.Load();
+		entity.maxHP = data.maxHP;
+		entity.currentHP = data.currentHP;
+		maxRoots = data.maxRoots;
+		numRoots = data.numRoots;
+		playerAttack.damage = data.damage;
+		Vector3 position;
+		position.x = data.position[0];
+		position.y = data.position[1];
+		position.z = data.position[2];
+		transform.position = position;
 	}
 }

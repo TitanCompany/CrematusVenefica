@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 1507366216}
   - component: {fileID: 1507366217}
   - component: {fileID: 1507366218}
+  - component: {fileID: 1158978134102515460}
   - component: {fileID: 1507366219}
   m_Layer: 9
   m_Name: Player
@@ -71,6 +72,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1384494407}
+  - {fileID: 4818679922388950044}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -198,7 +200,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 9999
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -226,6 +228,9 @@ MonoBehaviour:
   sword: {fileID: 11400000, guid: 5ab512e334fdad64f8111f9b0a674f0b, type: 2}
   archery: {fileID: 11400000, guid: e9d732b1d087cff4ebcda1c88ff9462e, type: 2}
   anims: []
+  entity: {fileID: 0}
+  maxRoots: 5
+  numRoots: 0
 --- !u!114 &1507366206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375f81bebaf827042b60b5db5c088bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
+  maxHP: 10000
   currentHP: 0
   speed: 0
   expirience: 0
@@ -331,6 +336,23 @@ MonoBehaviour:
   attackRadius: 0.5
   attackRate: 2
   damage: 14
+--- !u!114 &1158978134102515460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542828488488131974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4bf020cecc32b4190d48498f7f4b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  rbody: {fileID: 2542828488488131971}
+  firePoint: {fileID: 4818679922388950044}
+  arrowPrefab: {fileID: 5141435632130598940, guid: 5584a66c4fc56a24dbad1adbe8bce957, type: 3}
+  arrowForce: 20
 --- !u!114 &1507366219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,3 +367,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   experience: 0
+--- !u!1 &3798200385551325325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4818679922388950044}
+  m_Layer: 9
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4818679922388950044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798200385551325325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.098, y: 0.208, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2542828488488131970}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
