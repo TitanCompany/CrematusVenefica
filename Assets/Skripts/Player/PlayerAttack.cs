@@ -9,12 +9,14 @@ public class PlayerAttack : MonoBehaviour
 
 	// TODO: Изменить на Entity
 	private PlayerController entity;
-	private float timer = 1;
+	private AnimationController animController;
+	private float timer = 1f;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		entity = GetComponent<PlayerController>();
+		animController = GetComponent<AnimationController>();	
 	}
 
 	// Update is called once per frame
@@ -23,15 +25,15 @@ public class PlayerAttack : MonoBehaviour
 		if (Input.GetKey(KeyCode.Space) && timer >= 1f / attackRate)
 			Attack();
 		timer += Time.deltaTime;
-
 	}
 
 	private void Attack()
 	{
 		Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, LayerMask.GetMask("Enemy"));
+		animController.SetCharacterState("sword_strike", 1f);
+
 		if (enemies != null && enemies.Length != 0)
 		{
-			entity.animController.SetCharacterState("sword_strike");
 			foreach (var enemy in enemies)
 			{
 				var entity = enemy.GetComponent<Entity>();

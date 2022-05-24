@@ -6712,6 +6712,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 58070918415240225, guid: 04dfc530b0310e44683241f72d6024b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 58070918415240252, guid: 04dfc530b0310e44683241f72d6024b4, type: 3}
       propertyPath: m_Mesh
       value: 
