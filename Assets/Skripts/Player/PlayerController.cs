@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
 			return;
 		if (numRoots == 0)
 			return;
-		entity.currentHP *= 1.20f;
+		entity.currentHP += entity.maxHP*0.20f;
 		if (entity.currentHP > entity.maxHP)
 			entity.currentHP = entity.maxHP;
 		numRoots -= 1;
