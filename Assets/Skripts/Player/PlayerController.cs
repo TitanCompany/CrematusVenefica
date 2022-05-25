@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 	public AnimationReferenceAsset[] anims;
 	public Entity entity;
 	public PlayerAttack playerAttack;
+	float timer = 0;
 	public int maxRoots;
 	public int numRoots;
 
@@ -22,28 +23,26 @@ public class PlayerController : MonoBehaviour
 		entity = GetComponent<Entity>();
 		playerAttack = GetComponent<PlayerAttack>();
 		numRoots = maxRoots - 1;
+		entity.currentHP = 4000;
 	}
 
-	float timer = 0;
+	
 	void Update()
 	{
-		if (Input.GetKey(KeyCode.Tab) && timer > 1f)
-			ChangeAnimMode(timer);
 		if (Input.GetKey(KeyCode.Q) && timer > 1f)
-			Heal(timer);
+			Heal();
 		if (Input.GetKey(KeyCode.F5) && timer > 1f)
 			Save();
 		if (Input.GetKey(KeyCode.F6) && timer > 1f)
 			Load();
-		if (Input.GetKey(KeyCode.Tab) && timer > .5f)
-		{
-			ChangeAnimMode(timer);
-		}
+		if (Input.GetKey(KeyCode.Tab) && timer > 1f)
+			ChangeAnimMode();
+
 		timer += Time.deltaTime;
 	}
 
 	// Изменяет скин игрока.
-	void ChangeAnimMode(float timer)
+	void ChangeAnimMode()
 	{
 		if (animController.skeletonAnimation.skeleton.Skin.ToString() == "swordsman")
 			animController.skeletonAnimation.Skeleton.SetSkin("archer");
@@ -53,7 +52,7 @@ public class PlayerController : MonoBehaviour
 		timer = 0;
 	}
 
-	void Heal(float timer)
+	void Heal()
     {
 		if (entity.currentHP == entity.maxHP)
 			return;
