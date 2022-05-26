@@ -5,7 +5,7 @@ public class CameraScript : MonoBehaviour
 	private Camera cam;
 	public GameObject player;
 	public float min = 4f;
-	public float max = 16f;
+	public float max = 12f;
 	void Start()
 	{
 		cam = GetComponent<Camera>();
@@ -18,8 +18,8 @@ public class CameraScript : MonoBehaviour
 		if (mousePlus == 0)
 			return;
 		if (mousePlus > 0 && cam.orthographicSize <= max)
-			cam.orthographicSize = cam.orthographicSize + mousePlus * 4;
+			cam.orthographicSize = cam.orthographicSize + mousePlus * 3;
 		if (mousePlus < 0 && cam.orthographicSize >= min)
-			cam.orthographicSize = cam.orthographicSize + mousePlus * 4;
+			cam.orthographicSize = cam.orthographicSize + mousePlus * 3;
 	}
 }
