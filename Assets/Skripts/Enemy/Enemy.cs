@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
 		SearchPathToPlayer();
 		if (ai.target == null)
 			cat.SetCharacterState("Idle");
-		else
+		else if (cat != null)
 			cat.SetCharacterState("Run");
 	}
 

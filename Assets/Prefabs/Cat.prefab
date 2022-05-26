@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 1158063486}
   m_Layer: 7
   m_Name: Cat
-  m_TagString: Enemy
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,6 +343,7 @@ MonoBehaviour:
   currentHP: 0
   speed: 4
   expirience: 0
+  respawner: {fileID: 0}
 --- !u!1 &4056386775403917973
 GameObject:
   m_ObjectHideFlags: 0

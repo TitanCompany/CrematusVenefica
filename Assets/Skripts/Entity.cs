@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -9,7 +8,10 @@ public class Entity : MonoBehaviour
 	public float currentHP;
 	public float speed;
 	public int expirience;
-   
+
+	[SerializeField]
+	public GameObject respawner;
+
 	internal AnimationController animCtrl;
 	internal Transform form;
 	internal Rigidbody2D body;
@@ -33,7 +35,7 @@ public class Entity : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
+
 	}
 
 	public void TakeDamage(float damage)
@@ -58,12 +60,20 @@ public class Entity : MonoBehaviour
 		if (base.gameObject.name != "Player")
 		{
 			cat.SetCharacterState("Death");
-			cat.enabled = false;
+			AvaitAnim();
+			gameObject.SetActive(false);
+			Destroy(gameObject);
+			respawner.GetComponent<Spawner>().RefreshEnemiesCount("Cat");
 		}
 		else
 		{
 			new SceneChange().NextLevel("SampleScene");
 		}
 		//animCtrl.SetCharacterState("death");
+	}
+
+	IEnumerator AvaitAnim()
+	{
+		yield return new WaitForSeconds(2f);
 	}
 }
