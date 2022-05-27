@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
 	internal AnimationController animController;
 
-	private Level playerLevel;
+	public Level playerLevel;
 
 	void Start()
 	{
@@ -24,8 +24,9 @@ public class PlayerController : MonoBehaviour
 		entity = GetComponent<Entity>();
 		playerAttack = GetComponent<PlayerAttack>();
 		playerShoot = GetComponent<PlayerShoot>();
-		numRoots = maxRoots - 1;
-		entity.currentHP = entity.maxHP*0.4f;
+		numRoots = maxRoots - 3;
+		entity.currentHP = entity.maxHP*0.75f;
+		playerShoot.numArrows = playerShoot.maxArrows - 10;
 	}
 
 	
