@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 		playerAttack = GetComponent<PlayerAttack>();
 		playerShoot = GetComponent<PlayerShoot>();
 		numRoots = maxRoots - 1;
-		entity.currentHP = 4000;
+		entity.currentHP = entity.maxHP*0.4f;
 	}
 
 	

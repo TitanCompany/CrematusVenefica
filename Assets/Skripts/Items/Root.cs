@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Root : MonoBehaviour
 {
-    public PlayerController playerController;
+    private PlayerController playerController;
     
     // Start is called before the first frame update
     void Start()
@@ -14,7 +14,7 @@ public class Root : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (playerController.numRoots == playerController.maxRoots)
+        if (playerController.numRoots == playerController.maxRoots || collision.tag!="Player")
             return;
         else
         {
