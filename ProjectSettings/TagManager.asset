@@ -8,6 +8,8 @@ TagManager:
   - HPBar
   - SceneManager
   - Cat
+  - Roots
+  - ArrowsUI
   layers:
   - Default
   - TransparentFX

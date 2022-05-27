@@ -4,8 +4,8 @@ public class CameraScript : MonoBehaviour
 {
 	private Camera cam;
 	public GameObject player;
-	public float min = 4f;
-	public float max = 12f;
+	public float min;
+	public float max;
 	void Start()
 	{
 		cam = GetComponent<Camera>();

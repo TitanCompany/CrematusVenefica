@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 	public AnimationReferenceAsset[] anims;
 	public Entity entity;
 	public PlayerAttack playerAttack;
+	public PlayerShoot playerShoot;
 	float timer = 0;
 	public int maxRoots;
 	public int numRoots;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
 		animController = GetComponent<AnimationController>();
 		entity = GetComponent<Entity>();
 		playerAttack = GetComponent<PlayerAttack>();
+		playerShoot = GetComponent<PlayerShoot>();
 		numRoots = maxRoots - 1;
 		entity.currentHP = 4000;
 	}
