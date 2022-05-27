@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 	public float speed;
+	public GameObject sound;
 
 	private Vector2 movement;
 	private Rigidbody2D body;
@@ -30,6 +31,8 @@ public class PlayerMove : MonoBehaviour
 			if (animController.currentAnimation != "dash" && animController.currentAnimation != "sword_strike")
 			{
 				animController.SetCharacterState("run", 1f, true);
+				Instantiate(sound, transform.position, Quaternion.identity);
+				//Звук бега
 			}
 
 			if (movement.x > 0)
@@ -40,6 +43,6 @@ public class PlayerMove : MonoBehaviour
 			body.MovePosition(body.position + movement * speed * Time.fixedDeltaTime);
 		}
 		else if (animController.currentState != "dash" && animController.currentState != "sword_strike" && animController.currentState != "idle")
-			animController.SetCharacterState("idle", 1, true);
+			animController.SetCharacterState("idle", 1, true);//не надо звуков
 	}
 }

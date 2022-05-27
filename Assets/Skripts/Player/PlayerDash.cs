@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerDash : MonoBehaviour
 {
+	public GameObject sound;
 	private enum DashDirection
 	{
 		Left,
@@ -66,6 +67,7 @@ public class PlayerDash : MonoBehaviour
 	{
 		if (dashDirection != DashDirection.NoDirection)
 		{
+			Instantiate(sound, transform.position, Quaternion.identity);
 			float time = 1f;
 
 			if (dashTime <= 0)

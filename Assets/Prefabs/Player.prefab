@@ -229,8 +229,11 @@ MonoBehaviour:
   archery: {fileID: 11400000, guid: e9d732b1d087cff4ebcda1c88ff9462e, type: 2}
   anims: []
   entity: {fileID: 0}
+  playerAttack: {fileID: 0}
+  playerShoot: {fileID: 0}
   maxRoots: 5
   numRoots: 0
+  playerLevel: 0
 --- !u!114 &1507366206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  sound: {fileID: 9214008851325281485, guid: 7af637a456f78814a9377846f4d405d5, type: 3}
 --- !u!114 &1507366215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d2041d5c8180d478a4e9f9e9f7b780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 2101032813792322050, guid: abc33a2d216b5f6438d724471e6d5645, type: 3}
   dashSpeed: 12
   startDashTime: 0.5
 --- !u!114 &1507366216
@@ -320,6 +325,7 @@ MonoBehaviour:
   currentHP: 0
   speed: 0
   expirience: 0
+  respawner: {fileID: 0}
 --- !u!114 &1507366218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +342,7 @@ MonoBehaviour:
   attackRadius: 0.5
   attackRate: 2
   damage: 14
+  sound: {fileID: 3375647028212889674, guid: f3ff96187cef0ec48b4202b7becc0e08, type: 3}
 --- !u!114 &1158978134102515460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +359,9 @@ MonoBehaviour:
   rbody: {fileID: 2542828488488131971}
   firePoint: {fileID: 4818679922388950044}
   arrowPrefab: {fileID: 5141435632130598940, guid: 5584a66c4fc56a24dbad1adbe8bce957, type: 3}
+  numArrows: 0
+  maxArrows: 0
+  sound: {fileID: 5754996519004593937, guid: fff82aca07da8e6448d13516c62affe8, type: 3}
   arrowForce: 20
 --- !u!114 &1507366219
 MonoBehaviour:

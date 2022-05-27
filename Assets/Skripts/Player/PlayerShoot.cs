@@ -12,6 +12,8 @@ public class PlayerShoot : MonoBehaviour
     public int numArrows;
     public int maxArrows;
 
+    public GameObject sound;
+
     public float arrowForce = 20f;
     private float shootRate = 2f;
     private float nextShootTime = 0f;
@@ -45,8 +47,10 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
+
         if (numArrows == 0)
             return;
+        Instantiate(sound, transform.position, Quaternion.identity);
         firePoint.rotation = Quaternion.Euler(0f, 0f, angle);
         GameObject bullet = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
 

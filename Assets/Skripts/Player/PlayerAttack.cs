@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 	public float attackRadius;
 	public float attackRate;
 	public float damage;
+	public GameObject sound;
 
 	// TODO: Изменить на Entity
 	private PlayerController entity;
@@ -31,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
 	{
 		Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, LayerMask.GetMask("Enemy"));
 		animController.SetCharacterState("sword_strike", 1f);
+		Instantiate(sound);
 
 		if (enemies != null && enemies.Length != 0)
 		{

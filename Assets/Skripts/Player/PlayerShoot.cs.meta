@@ -3,7 +3,12 @@ guid: de4bf020cecc32b4190d48498f7f4b2e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cam: {instanceID: 0}
+  - rbody: {instanceID: 0}
+  - firePoint: {instanceID: 0}
+  - arrowPrefab: {instanceID: 0}
+  - sound: {fileID: 2542828488488131974, guid: 55cf66db2f844074d89b486995e206b5, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

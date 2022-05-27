@@ -43,6 +43,7 @@ public class EntityAttack : MonoBehaviour
 			// TODO: Temp
 			if (gameObject.name != "Player")
 				GetComponent<CatController>().SetCharacterState("Hit");
+
 		}
 	}
 
