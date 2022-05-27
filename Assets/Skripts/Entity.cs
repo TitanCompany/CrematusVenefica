@@ -67,6 +67,7 @@ public class Entity : MonoBehaviour
 		}
 		else
 		{
+			
 			new SceneChange().NextLevel("SampleScene");
 		}
 		//animCtrl.SetCharacterState("death");
